@@ -1,0 +1,82 @@
+.aboutUs {
+  padding: 80px 0;
+  background-color: #f8f9fa; /* Светлый фон секции */
+}
+
+.aboutUs__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.aboutUs__content {
+  display: flex;
+  gap: 40px; /* Отступ между колонками */
+  align-items: flex-start; /* Выравнивание колонок по верху */
+}
+
+.aboutUs__cards {
+  flex: 1; /* Занимает доступное пространство */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
+  gap: 20px; /* Отступ между карточками */
+}
+
+.aboutUs__card {
+  background-color: #007bff; /* Синий фон по умолчанию */
+  color: #fff;
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.8s ease; /* Плавный переход для hover */
+  overflow: hidden;
+}
+
+.aboutUs__card p {
+	
+	padding: 25px;
+	height: 100%;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  transition: all 0.8s ease;
+}
+
+/* Hover-эффект для всех карточек */
+.aboutUs__card:hover p{
+	
+	transform: rotate(-5deg); /* Небольшое увеличение */
+  background-color: #20c997;
+}
+
+
+.aboutUs__main-content {
+  flex: 1; /* Занимает доступное пространство */
+  padding-left: 20px; /* Небольшой отступ слева */
+}
+
+.aboutUs__logo {
+  margin-bottom: 20px;
+  
+}
+
+.aboutUs__logo img {
+  width: 150px; /* Ограничиваем размер лого */
+  height: auto;
+  margin: 0 auto;
+}
+
+.aboutUs__main-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+  text-align: center; /* Центрируем заголовок */
+}
+
+.aboutUs__text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #343a40; /* Темно-серый цвет текста */
+  
+}

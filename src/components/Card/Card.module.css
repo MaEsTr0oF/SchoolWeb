@@ -1,0 +1,53 @@
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Чтобы кнопки были на одном уровне */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1; /* Занимает доступное пространство, отодвигая кнопку вниз */
+}
+
+.card__item {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.card__button {
+  background-color: #ffc107; /* Желтый фон кнопки */
+  color: #333; /* Темный текст на кнопке */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start; /* Кнопка прижата к левому краю */
+}
+
+.card__button:hover {
+  background-color: #e0a800; /* Более темный желтый при наведении */
+} 

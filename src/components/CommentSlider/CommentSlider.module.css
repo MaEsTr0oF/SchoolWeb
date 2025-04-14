@@ -1,0 +1,88 @@
+.commentSlider {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* Светло-серый фон секции */
+  overflow: hidden; /* Предотвращение горизонтальной прокрутки */
+}
+
+.sliderTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.sliderViewport {
+  max-width: 600px; /* Ширина видимой области слайдера */
+  margin: 0 auto; /* Центрирование */
+  position: relative;
+}
+
+.commentCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 70px; /* Паддинг с учетом кнопок по бокам */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative; /* Для позиционирования кнопок */
+  min-height: 150px; /* Минимальная высота карточки */
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; /* Центрирование контента по вертикали */
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.commentText {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0; /* Убираем стандартный отступ параграфа */
+}
+
+/* Стили для кнопок навигации */
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #6c757d; /* Серый фон кнопок */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Скругленные углы */
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.arrowButton:hover {
+  background-color: #5a6268; /* Более темный серый при наведении */
+}
+
+.prevButton {
+  left: 15px; /* Отступ слева */
+}
+
+.nextButton {
+  right: 15px; /* Отступ справа */
+} 

@@ -1,0 +1,116 @@
+.header {
+background-color: #fff; /* Или другой светлый фон, если нужно */
+padding: 10px 0;
+border-bottom: 1px solid #eee; /* Небольшая линия внизу, как на фото */
+width: 100%;
+}
+
+.header__container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px; /* Ограничиваем ширину контейнера */
+margin: 0 auto; /* Центрируем контейнер */
+padding: 0 15px; /* Добавляем отступы по бокам */
+}
+
+.header__content {
+display: flex;
+align-items: center;
+}
+
+.header__logo {
+margin-right: 40px; /* Отступ справа от логотипа */
+}
+
+/* Убедитесь, что изображение логотипа подстраивается */
+.header__logo img {
+display: block;
+max-width: 100%;
+height: auto;
+}
+
+
+.header__menu-list {
+display: flex;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.header__menu-item {
+margin-right: 30px; /* Отступ между пунктами меню */
+}
+
+.header__menu-item:last-child {
+margin-right: 0;
+}
+
+.header__menu-link {
+text-decoration: none;
+color: #333; /* Цвет текста меню */
+font-weight: 500; /* Немного жирнее */
+transition: color 0.3s ease;
+position: relative;
+font-size: 22px;
+}
+.header__menu-link:before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #95B1C9;
+	border-radius: 50%;
+	transition: all 0.5s ease;
+}
+.header__menu-link:hover {
+color: #95B1C9; /* Цвет при наведении */
+}
+.header__menu-link:hover:before{
+	width: 100%;
+}
+.header__buttons {
+display: flex;
+align-items: center;
+}
+
+.header__button {
+padding: 10px 25px; /* Отступы внутри кнопки */
+border-radius: 20px; /* Скругление углов */
+border: 1px solid #a9c2d9; /* Общая граница */
+cursor: pointer;
+font-size: 18px;
+font-weight: 500;
+transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+margin-left: 15px; /* Отступ между кнопками */
+}
+
+.header__button--signup {
+	background-color: #fff; /* Фон для кнопки "Связаться" */
+	color: #a9c2d9; /* Цвет текста */
+}
+
+.header__button--signup:hover {
+	background-color: #95B1C9; /* Фон для кнопки "Записаться" */
+	color: #fff; /* Текст белый */
+}
+
+.header__button--contact {
+background-color: #fff; /* Фон для кнопки "Связаться" */
+color: #a9c2d9; /* Цвет текста */
+}
+
+.header__button--contact:hover {
+	background-color: #95B1C9; /* Фон для кнопки "Записаться" */
+	color: #fff; /* Текст белый */
+}
+.container {
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+}

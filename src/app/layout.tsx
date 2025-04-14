@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import { Jost } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Настраиваем шрифт Jost
+const jost = Jost({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-jost',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={jost.variable}
       >
         {children}
       </body>

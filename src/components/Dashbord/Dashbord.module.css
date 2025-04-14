@@ -1,0 +1,70 @@
+.dashbord {
+  padding: 100px 0; /* Большие отступы сверху и снизу */
+  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%); /* Градиентный фон как на фото */
+  min-height: 70vh; /* Минимальная высота, чтобы занимало большую часть экрана */
+  display: flex;
+  align-items: center; /* Центрируем контент по вертикали */
+}
+
+.dashbord__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center; /* Центрируем текст */
+  color: #ffffff; /* Белый цвет текста */
+}
+
+.dashbord__content h1 {
+  font-size: 3.5rem; /* Увеличиваем размер заголовка */
+  font-weight: 700; /* Делаем жирным */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.dashbord__content p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.dashbord__buttons {
+  display: flex;
+  justify-content: center; /* Центрируем кнопки */
+  gap: 20px; /* Отступ между кнопками */
+}
+
+.dashbord__button {
+  padding: 12px 30px;
+  border-radius: 25px; /* Сильное скругление */
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.6s ease, background-color 0.6s ease, color 0.6s ease;
+}
+
+.dashbord__button:first-child {
+  background-color: #5a6ac4; /* Темно-синий фон для первой кнопки */
+  color: #fff;
+  border: 1px solid #5a6ac4;
+}
+
+.dashbord__button:first-child:hover {
+  /* background-color: #4a58a4; */ /* Убираем старый фон */
+  background: linear-gradient(90deg, #6b7ae0, #5a6ac4); /* Добавляем градиент */
+  border-color: transparent; /* Убираем границу, т.к. фон теперь градиентный */
+  transform: scale(1.03);
+}
+
+.dashbord__button:last-child {
+  background-color: transparent; /* Прозрачный фон для второй кнопки */
+  color: #fff;
+  border: 1px solid #fff; /* Белая обводка */
+}
+
+.dashbord__button:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Почти непрозрачный белый фон */
+  color: #5a6ac4; /* Темно-синий цвет текста для контраста */
+  border-color: #fff; /* Оставляем белую границу */
+  transform: scale(1.03);
+}
