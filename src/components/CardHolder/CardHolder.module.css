@@ -20,7 +20,7 @@
 
 .cardHolder__grid {
   display: grid;
-  /* Адаптивная сетка: минимум 250px на карточку, максимум 1fr */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-  gap: 30px; /* Отступы между карточками */
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr ;
+  gap: 40px; 
 }

@@ -69,7 +69,7 @@ const CommentSlider: React.FC = () => {
                         src={currentComment.avatarUrl}
                         // alt={`Avatar of ${currentComment.userName}`}
 								alt='avatar'
-                        width={150} // Размер аватара
+                        width={150} 
                         height={150}
                         className={styles.avatar}
                     />

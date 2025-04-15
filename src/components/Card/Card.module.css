@@ -1,53 +1,56 @@
 .card {
   background-color: #fff;
   border-radius: 12px;
-  padding: 25px;
+  padding: 40px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   text-align: left;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Чтобы кнопки были на одном уровне */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  width: 100%;
+  border-top: 4px solid #ffc107;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-top-color: #e0a800;
 }
 
 .card__title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #333;
 }
 
 .card__list {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
-  flex-grow: 1; /* Занимает доступное пространство, отодвигая кнопку вниз */
+  margin: 0 0 25px 0;
+  flex-grow: 1;
 }
 
 .card__item {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .card__button {
-  background-color: #ffc107; /* Желтый фон кнопки */
-  color: #333; /* Темный текст на кнопке */
+  background-color: #ffc107;
+  color: #333;
   border: none;
   border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 0.9rem;
+  padding: 12px 25px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: flex-start; /* Кнопка прижата к левому краю */
+  align-self: flex-start;
 }
 
 .card__button:hover {
-  background-color: #e0a800; /* Более темный желтый при наведении */
+  background-color: #e0a800;
 } 

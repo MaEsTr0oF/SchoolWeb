@@ -81,4 +81,20 @@
 
 .rightArrow {
   right: 15px; /* Отступ справа */
+}
+
+.moreInfoButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.moreInfoButton:hover {
+  background-color: #0056b3;
 } 
