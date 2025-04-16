@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import Image from 'next/image'; // Используем next/image для оптимизации
+import Image from 'next/image';
 import styles from './TeacherSlider.module.css';
 import TeacherModal from '../TeacherModal/TeacherModal';
 
@@ -9,28 +9,36 @@ interface Teacher {
   id: number;
   name: string;
   bio: string;
+  position: string;
+  experience: string;
   imageUrl: string;
 }
 
-// Пример данных
+// Данные преподавателей
 const teachersData: Teacher[] = [
   {
     id: 1,
-    name: 'Teacher Name 1',
-    bio: 'Short bio of Teacher 1, covering teaching experience and expertise in the subject.',
-    imageUrl: '/placeholder-teacher1.jpg', // Замените на реальные пути к изображениям
+    name: 'Антон Курмаев',
+    bio: 'Преподавал информатику в гимназии, ведёт курсы по веб-разработке и программированию, организовывал квесты и круглые столы, а в 22 года занял руководящую должность.',
+    position: 'Преподаватель веб-разработки',
+    experience: '5 лет опыта',
+    imageUrl: '/images/teachers/teacher1.jpg',
   },
   {
     id: 2,
-    name: 'Teacher Name 2',
-    bio: 'Another teacher bio, highlighting different skills and background.',
-    imageUrl: '/placeholder-teacher2.jpg',
+    name: 'Елена Смирнова',
+    bio: 'Сертифицированный педагог с опытом преподавания в языковой школе. Специализируется на интерактивных методиках преподавания и индивидуальном подходе к ученикам.',
+    position: 'Преподаватель английского',
+    experience: '7 лет опыта',
+    imageUrl: '/images/teachers/teacher2.jpg',
   },
   {
     id: 3,
-    name: 'Teacher Name 3',
-    bio: 'Third teacher description, focusing on approachability and student success.',
-    imageUrl: '/placeholder-teacher3.jpg',
+    name: 'Сергей Иванов',
+    bio: 'Опытный разработчик, работавший в крупных IT-компаниях. Ведет курсы по Python и Data Science, помогает ученикам с трудоустройством в ведущие компании.',
+    position: 'Python-разработчик',
+    experience: '8 лет опыта',
+    imageUrl: '/images/teachers/teacher3.jpg',
   },
 ];
 
@@ -67,39 +75,48 @@ const TeacherSlider: React.FC = () => {
   const currentTeacher = teachersData[currentIndex];
 
   return (
-    <>
-      <div className={styles.sliderContainer}>
-        <div className={styles.sliderCard} onClick={openTeacherModal}>
-          <button 
-            onClick={(e) => handleButtonClick(e, prevSlide)} 
-            className={`${styles.arrowButton} ${styles.leftArrow}`}
-          >
-            ‹
-          </button>
-          
-          <div className={styles.slideContent}>
+    <div className={styles.teacherSection}>
+      <div className={styles.teacherContainer}>
+        <div className={styles.textColumn}>
+          <h2 className={styles.mainTitle}>Преподаватели на связи и вне уроков!</h2>
+          <p className={styles.description}>
+            Преподаватели и кураторы доступны и вне уроков. Если возникнут вопросы или сложности, 
+            ребенок всегда сможет обратиться за помощью, и мы обязательно поможем решить любую проблему!
+          </p>
+        </div>
+        
+        <div className={styles.cardColumn}>
+          <div className={styles.teacherCard} onClick={openTeacherModal}>
             <div className={styles.teacherImageContainer}>
               <Image 
                 src={currentTeacher.imageUrl}
                 alt={currentTeacher.name}
-                width={150} // Задайте нужную ширину
-                height={150} // Задайте нужную высоту
+                width={220}
+                height={220}
                 className={styles.teacherImage}
               />
             </div>
-            <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
-            <p className={styles.teacherBio}>{currentTeacher.bio}</p>
-            <button className={styles.moreInfoButton} onClick={(e) => handleButtonClick(e, openTeacherModal)}>
-              Подробнее о преподавателе
-            </button>
+            
+            <div className={styles.teacherInfo}>
+              <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
+              <p className={styles.teacherBio}>{currentTeacher.bio}</p>
+            </div>
+            
+            <div className={styles.navigationControls}>
+              <button 
+                onClick={(e) => handleButtonClick(e, prevSlide)} 
+                className={`${styles.navButton} ${styles.prevButton}`}
+              >
+                ‹
+              </button>
+              <button 
+                onClick={(e) => handleButtonClick(e, nextSlide)} 
+                className={`${styles.navButton} ${styles.nextButton}`}
+              >
+                ›
+              </button>
+            </div>
           </div>
-
-          <button 
-            onClick={(e) => handleButtonClick(e, nextSlide)} 
-            className={`${styles.arrowButton} ${styles.rightArrow}`}
-          >
-            ›
-          </button>
         </div>
       </div>
       
@@ -112,7 +129,7 @@ const TeacherSlider: React.FC = () => {
         isOpen={isModalOpen}
         onClose={closeTeacherModal}
       />
-    </>
+    </div>
   );
 };
 

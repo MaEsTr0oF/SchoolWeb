@@ -1,56 +1,152 @@
 .card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
+  position: relative;
+  height: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  border-top: 4px solid #ffc107;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  justify-content: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  border-top-color: #e0a800;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
+.card__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
 }
 
-.card__list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 25px 0;
-  flex-grow: 1;
+/* Градиентная подложка для улучшения читаемости текста */
+.card__content::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.card__item {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.card__button {
-  background-color: #ffc107;
-  color: #333;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 25px;
-  font-size: 1rem;
+/* Категория курса */
+.card__category {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: auto;
   align-self: flex-start;
 }
 
-.card__button:hover {
-  background-color: #e0a800;
+/* Блок с информацией о курсе */
+.card__info {
+  color: #fff;
+  width: 100%;
+}
+
+/* Заголовок карточки */
+.card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+/* Блок с метаданными */
+.card__meta {
+  display: flex;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Длительность курса */
+.card__duration {
+  margin-right: 5px;
+}
+
+/* Метка трудоустройства */
+.card__employment {
+  margin-left: 5px;
+}
+
+/* Описание курса (появляется при наведении) */
+.card__description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  overflow: hidden;
+}
+
+/* Стили для карточки в состоянии наведения */
+.card__hovered .card__description {
+  opacity: 1;
+  max-height: 150px;
+}
+
+/* Уникальные стили для разных типов курсов */
+.card:nth-child(1) {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.card:nth-child(4) {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+
+.card:nth-child(6) {
+  background: linear-gradient(135deg, #fa71cd, #9b59b6);
+}
+
+/* Стили для различных размеров экранов */
+@media (max-width: 768px) {
+  .card {
+    height: 320px;
+  }
+  
+  .card__title {
+    font-size: 20px;
+  }
+  
+  .card__description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card__content {
+    padding: 20px;
+  }
+  
+  .card__category {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
 } 

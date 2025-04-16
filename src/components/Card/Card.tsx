@@ -9,10 +9,24 @@ interface CardProps {
   title: string;
   items: string[];
   buttonText: string;
+  duration: string;
+  employment: string;
+  description: string;
+  bgImage?: string;
 }
 
-const Card: React.FC<CardProps> = ({ courseId, title, items, buttonText }) => {
+const Card: React.FC<CardProps> = ({
+  courseId,
+  title,
+  items,
+  buttonText,
+  duration,
+  employment,
+  description,
+  bgImage
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   
   const handleCardClick = () => {
     setIsModalOpen(true);
@@ -22,28 +36,48 @@ const Card: React.FC<CardProps> = ({ courseId, title, items, buttonText }) => {
     setIsModalOpen(false);
   };
 
-  // Чтобы кнопка не вызывала открытие модального окна
-  const handleButtonClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Останавливаем всплытие события
-    // Здесь можно реализовать отдельную логику для кнопки записи
-    console.log(`Записаться на курс: ${title}`);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const cardStyle = {
+    backgroundImage: bgImage ? `url(${bgImage})` : undefined,
   };
 
   return (
     <>
-      <div className={styles.card} onClick={handleCardClick}>
-        <h3 className={styles.card__title}>{title}</h3>
-        <ul className={styles.card__list}>
-          {items.map((item, index) => (
-            <li key={index} className={styles.card__item}>{item}</li>
-          ))}
-        </ul>
-        <button 
-          className={styles.card__button} 
-          onClick={handleButtonClick}
-        >
-          {buttonText}
-        </button>
+      <div
+        className={`${styles.card} ${isHovered ? styles.card__hovered : ''}`}
+        style={cardStyle}
+        onClick={handleCardClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={styles.card__content}>
+          <div className={styles.card__category}>Профессия</div>
+          
+          <div className={styles.card__info}>
+            <h3 className={styles.card__title}>{title}</h3>
+            
+            <div className={styles.card__meta}>
+              <span className={styles.card__duration}>{duration}</span>
+              {employment && (
+                <>
+                  •
+                  <span className={styles.card__employment}>{employment}</span>
+                </>
+              )}
+            </div>
+            
+            <p className={styles.card__description}>
+              {description}
+            </p>
+          </div>
+        </div>
       </div>
    
       <CourseModal

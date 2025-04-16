@@ -1,100 +1,164 @@
-.sliderContainer {
-  padding: 50px 20px; /* Отступы сверху/снизу и по бокам */
-  background-color: #007bff; /* Синий фон всей секции */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sliderCard {
-  background-color: #fff; /* Белый фон карточки */
-  border-radius: 15px; /* Скругление углов карточки */
-  padding: 40px 60px; /* Внутренние отступы карточки (больше по бокам) */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  position: relative; /* Для позиционирования кнопок */
+.teacherSection {
   width: 100%;
-  max-width: 700px; /* Максимальная ширина карточки */
-  text-align: center;
-  overflow: hidden; /* Скрываем часть кнопок, если они выходят */
+  padding: 80px 0;
+  background-color: #f8faff;
 }
 
-.slideContent {
+.teacherContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.textColumn {
+  flex: 1;
+  max-width: 500px;
+}
+
+.mainTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cardColumn {
+  flex: 1;
+  max-width: 550px;
+}
+
+.teacherCard {
+  background-color: #e9f4ff;
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacherCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
 }
 
 .teacherImageContainer {
-  margin-bottom: 25px;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .teacherImage {
-  border-radius: 50%; /* Делаем изображение круглым */
-  object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
-  border: 3px solid #eee; /* Небольшая рамка вокруг фото */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.teacherInfo {
+  text-align: center;
 }
 
 .teacherName {
-  font-size: 1.8rem;
+  font-size: 26px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .teacherBio {
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.5;
   color: #555;
-  line-height: 1.6;
-  max-width: 500px; /* Ограничиваем ширину текста */
-  margin: 0 auto; /* Центрируем текст */
+  margin-bottom: 20px;
 }
 
-.arrowButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #007bff; /* Синий фон кнопок */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 45px; /* Ширина кнопки */
-  height: 45px; /* Высота кнопки */
-  font-size: 1.8rem; /* Размер стрелки */
-  line-height: 45px; /* Центрируем стрелку */
-  cursor: pointer;
+.navigationControls {
   display: flex;
   justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 10;
+  margin-top: 20px;
+  gap: 10px;
 }
 
-.arrowButton:hover {
-  background-color: #0056b3; /* Темно-синий при наведении */
-  transform: translateY(-50%) scale(1.05);
-}
-
-.leftArrow {
-  left: 15px; /* Отступ слева */
-}
-
-.rightArrow {
-  right: 15px; /* Отступ справа */
-}
-
-.moreInfoButton {
-  background-color: #007bff;
-  color: white;
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  margin-top: 15px;
-  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.moreInfoButton:hover {
-  background-color: #0056b3;
+.navButton:hover {
+  background-color: #fff;
+}
+
+.prevButton {
+  padding-right: 3px;
+}
+
+.nextButton {
+  padding-left: 3px;
+}
+
+@media (max-width: 992px) {
+  .teacherContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .textColumn {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .cardColumn {
+    max-width: 100%;
+  }
+  
+  .mainTitle {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teacherSection {
+    padding: 60px 0;
+  }
+  
+  .mainTitle {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+  
+  .teacherName {
+    font-size: 22px;
+  }
+  
+  .teacherBio {
+    font-size: 14px;
+  }
 } 

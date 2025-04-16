@@ -25,30 +25,34 @@
 .aboutUs__card {
   background-color: #007bff; /* Синий фон по умолчанию */
   color: #fff;
-  
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.8s ease; /* Плавный переход для hover */
+  transition: all 0.8s ease, transform 0.3s ease; /* Плавный переход для hover */
   overflow: hidden;
+  cursor: pointer; /* Показываем, что карточка интерактивна */
 }
 
 .aboutUs__card p {
-	
-	padding: 25px;
-	height: 100%;
+  padding: 25px;
+  height: 100%;
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.5;
-  transition: all 0.8s ease;
+  transition: all 0.8s ease, transform 0.4s ease, font-size 0.4s ease;
 }
 
 /* Hover-эффект для всех карточек */
-.aboutUs__card:hover p{
-	
-	transform: rotate(-5deg); /* Небольшое увеличение */
-  background-color: #20c997;
+.aboutUs__card:hover {
+  transform: translateY(-5px); /* Приподнимаем карточку */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Усиливаем тень */
 }
 
+.aboutUs__card:hover p {
+  transform: scale(1.05); /* Увеличиваем текст */
+  font-size: 1.15rem; /* Немного увеличиваем размер шрифта */
+  background-color: #20c997;
+  transform: rotate(-5deg);
+}
 
 .aboutUs__main-content {
   flex: 1; /* Занимает доступное пространство */
@@ -64,6 +68,12 @@
   width: 150px; /* Ограничиваем размер лого */
   height: auto;
   margin: 0 auto;
+  transition: transform 0.4s ease;
+  display: block; /* Чтобы margin: 0 auto работал */
+}
+
+.aboutUs__logo img:hover {
+  transform: scale(1.1) rotate(3deg); /* Увеличение с небольшим поворотом */
 }
 
 .aboutUs__main-content h2 {
@@ -72,11 +82,25 @@
   color: #007bff; /* Синий цвет заголовка */
   margin-bottom: 20px;
   text-align: center; /* Центрируем заголовок */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.aboutUs__main-content h2:hover {
+  transform: scale(1.05);
+  color: #0056b3; /* Более темный синий при наведении */
 }
 
 .aboutUs__text p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #343a40; /* Темно-серый цвет текста */
-  
+  transition: transform 0.4s ease, color 0.4s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.aboutUs__text p:hover {
+  transform: scale(1.03); /* Плавное увеличение текста */
+  color: #007bff; /* Меняем цвет текста при наведении */
+  background-color: rgba(0, 123, 255, 0.05); /* Легкий фон с цветом ссылок */
 }

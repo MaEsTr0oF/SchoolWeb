@@ -44,8 +44,8 @@ const TeacherModal: React.FC<TeacherModalProps> = ({ id, name, bio, imageUrl, is
             <Image 
               src={imageUrl}
               alt={name}
-              width={120}
-              height={120}
+              width={150}
+              height={150}
               className={styles.teacherImage}
             />
           </div>
@@ -54,26 +54,27 @@ const TeacherModal: React.FC<TeacherModalProps> = ({ id, name, bio, imageUrl, is
         
         <div className={styles.content}>
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>О преподавателе</h3>
+            <h3 className={styles.sectionTitle}>Опыт преподавателя</h3>
             <p className={styles.text}>{bio}</p>
           </div>
           
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Опыт и квалификация</h3>
+            <h3 className={styles.sectionTitle}>Образование и квалификация</h3>
             <ul className={styles.list}>
-              <li className={styles.listItem}>Опыт преподавания более 5 лет</li>
-              <li className={styles.listItem}>Степень магистра в соответствующей области</li>
-              <li className={styles.listItem}>Участие в международных конференциях</li>
-              <li className={styles.listItem}>Автор учебных материалов</li>
+              <li className={styles.listItem}>Высшее образование в сфере информационных технологий</li>
+              <li className={styles.listItem}>Сертификаты и дипломы по профильным курсам</li>
+              <li className={styles.listItem}>Участие в профессиональных конференциях и семинарах</li>
+              <li className={styles.listItem}>Постоянное повышение квалификации</li>
             </ul>
           </div>
           
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Курсы преподавателя</h3>
+            <h3 className={styles.sectionTitle}>Преподаваемые курсы</h3>
             <ul className={styles.coursesList}>
-              <li className={styles.coursesListItem}>Базовый курс</li>
-              <li className={styles.coursesListItem}>Продвинутый уровень</li>
-              <li className={styles.coursesListItem}>Специализированный курс</li>
+              <li className={styles.coursesListItem}>Основы веб-разработки</li>
+              <li className={styles.coursesListItem}>HTML, CSS и JavaScript</li>
+              <li className={styles.coursesListItem}>Разработка на ReactJS</li>
+              <li className={styles.coursesListItem}>Современный фронтенд</li>
             </ul>
           </div>
         </div>
