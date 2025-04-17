@@ -17,7 +17,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/CTK LOGO PS FORMAT.png');
+  background-image: url('/CTK_LOGO.svg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Фиксируем изображение при скролле */
