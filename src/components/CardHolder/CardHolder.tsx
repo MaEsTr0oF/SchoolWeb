@@ -11,7 +11,8 @@ const coursesData = [
 		duration: '10 месяцев',
 		employment: 'с трудоустройством',
 		description: 'Вы освоите самый востребованный язык программирования, на котором пишут сайты, приложения, игры и чат-боты. Сделаете 3 проекта для портфолио, а Центр карьеры поможет найти работу',
-		bgImage: '' // Используем градиент из CSS
+		bgImage: '', // Используем градиент из CSS
+		sales: '-50%',
 	},
 	{ 
 		id: 2, 
@@ -21,7 +22,8 @@ const coursesData = [
 		duration: '6 месяцев',
 		employment: 'с трудоустройством',
 		description: 'Освоите бухгалтерский и налоговый учёт, работу в программе 1С. Сможете вести документацию и сдавать отчётность в соответствии с законодательством.',
-		bgImage: '/images/courses/accounting.jpg' // Путь к изображению
+		bgImage: '/images/courses/accounting.jpg', // Путь к изображению
+		sales: '',
 	},
 	{ 
 		id: 3, 
@@ -31,7 +33,8 @@ const coursesData = [
 		duration: '12 месяцев',
 		employment: 'с трудоустройством',
 		description: 'Научитесь создавать дизайн для цифровых и печатных материалов. Освоите профессиональные инструменты и соберете портфолио из реальных проектов.',
-		bgImage: '' // Используем градиент из CSS
+		bgImage: '', // Используем градиент из CSS
+		sales: '-25%',
 	},
 	{ 
 		id: 4, 
@@ -41,7 +44,8 @@ const coursesData = [
 		duration: '8 месяцев',
 		employment: 'с трудоустройством',
 		description: 'Освоите современные технологии фронтенд-разработки и научитесь создавать интерактивные веб-интерфейсы. Работа с React, TypeScript и другими современными инструментами.',
-		bgImage: '/images/courses/frontend.jpg'
+		bgImage: '/images/courses/frontend.jpg',
+		sales: '',
 	},
 	{ 
 		id: 5, 
@@ -51,7 +55,8 @@ const coursesData = [
 		duration: '10 месяцев',
 		employment: 'с трудоустройством',
 		description: 'Научитесь анализировать большие данные и строить предиктивные модели. Курс для тех, кто хочет освоить одну из самых востребованных профессий на рынке.',
-		bgImage: '/images/courses/datascience.jpg'
+		bgImage: '/images/courses/datascience.jpg',
+		sales: '',
 	},
 	{ 
 		id: 6, 
@@ -61,7 +66,8 @@ const coursesData = [
 		duration: '4 месяца',
 		employment: 'с трудоустройством',
 		description: 'Вы научитесь создавать стратегии продвижения в социальных сетях, запускать рекламные кампании и анализировать их эффективность.',
-		bgImage: '/images/courses/smm.jpg'
+		bgImage: '/images/courses/smm.jpg',
+		sales: '-40%',
 	},
 ];
 
@@ -82,6 +88,7 @@ export default function CardHolder() {
 							employment={course.employment}
 							description={course.description}
 							bgImage={course.bgImage}
+							sales={course.sales}
 						/>
 					))}
 				</div>

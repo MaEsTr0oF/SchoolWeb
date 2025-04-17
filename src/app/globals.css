@@ -3,12 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-primary: 'PT Sans Caption', sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-primary);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -22,5 +23,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-jost), sans-serif;
+  font-family: var(--font-primary), sans-serif;
+}
+
+* {
+  font-family: var(--font-primary), sans-serif;
 }

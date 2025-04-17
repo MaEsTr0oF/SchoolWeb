@@ -7,7 +7,7 @@ export default function Header() {
       <div className={`${styles.header__container} ${styles.container}`}>
 			<div className={styles.header__content}>
 				<div className={styles.header__logo}>
-					<Image src="/CTK LOGO PS FORMAT.png" alt="logo" width={120} height={120} />
+					<Image src="/CTK_LOGO.svg" alt="logo" width={120} height={120} />
 				</div>
 				<nav className={styles.header__menu}>
 					<ul className={styles['header__menu-list']}>

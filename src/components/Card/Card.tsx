@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './Card.module.css';
 import CourseModal from '../CourseModal/CourseModal';
+import Image from 'next/image';
 
 interface CardProps {
   courseId: number;
@@ -13,6 +14,7 @@ interface CardProps {
   employment: string;
   description: string;
   bgImage?: string;
+  sales?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,7 +25,8 @@ const Card: React.FC<CardProps> = ({
   duration,
   employment,
   description,
-  bgImage
+  bgImage,
+  sales
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -57,6 +60,13 @@ const Card: React.FC<CardProps> = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+        {sales && (
+          <div className={styles.card__sales}>
+            <Image src="/sales.svg" alt="Скидка" width={80} height={80} />
+            
+          </div>
+        )}
+        
         <div className={styles.card__content}>
           <div className={styles.card__category}>Профессия</div>
           

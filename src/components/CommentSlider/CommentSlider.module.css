@@ -1,33 +1,54 @@
 .commentSlider {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: #f8f9fa; /* Светло-серый фон секции */
   overflow: hidden; /* Предотвращение горизонтальной прокрутки */
 }
 
 .sliderTitle {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #333;
 }
 
-.sliderViewport {
-  max-width: 600px; /* Ширина видимой области слайдера */
-  margin: 0 auto; /* Центрирование */
-  position: relative;
+/* Сетка для комментариев */
+.commentsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Стили для карточки комментария */
 .commentCard {
   background-color: #fff;
   border-radius: 12px;
-  padding: 30px 70px; /* Паддинг с учетом кнопок по бокам */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  position: relative; /* Для позиционирования кнопок */
-  min-height: 150px; /* Минимальная высота карточки */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; 
-  justify-content: center; /* Центрирование контента по вертикали */
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Эффект при наведении на карточку */
+.commentCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для первой карточки (выделенной) */
+.commentCardFeatured {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  background-color: #f0f9ff; /* Светло-голубой фон для выделения */
+  padding: 30px;
 }
 
 .cardHeader {
@@ -36,53 +57,87 @@
   margin-bottom: 15px;
 }
 
+.avatarContainer {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .avatar {
   border-radius: 50%;
-  margin-right: 15px;
   object-fit: cover;
+  border: 2px solid #e6e6e6;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .userName {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
+  margin-bottom: 5px;
 }
 
 .commentText {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
   line-height: 1.5;
-  margin: 0; /* Убираем стандартный отступ параграфа */
+  margin: 0;
+  flex-grow: 1; /* Занимает оставшееся пространство */
 }
 
-/* Стили для кнопок навигации */
-.arrowButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #6c757d; /* Серый фон кнопок */
-  color: white;
-  border: none;
-  border-radius: 8px; /* Скругленные углы */
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Стили для текста в выделенной карточке */
+.commentCardFeatured .commentText {
+  font-size: 1.1rem;
+}
+
+/* Стили для отображения рейтинга */
+.rating {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease;
-  z-index: 10;
+  margin-top: 2px;
 }
 
-.arrowButton:hover {
-  background-color: #5a6268; /* Более темный серый при наведении */
+.starFilled {
+  color: #ffc107; /* Золотой цвет для заполненных звезд */
+  font-size: 14px;
+  margin-right: 2px;
 }
 
-.prevButton {
-  left: 15px; /* Отступ слева */
+.starEmpty {
+  color: #e0e0e0; /* Серый цвет для пустых звезд */
+  font-size: 14px;
+  margin-right: 2px;
 }
 
-.nextButton {
-  right: 15px; /* Отступ справа */
+/* Адаптивность для планшетов и мобильных */
+@media (max-width: 992px) {
+  .commentsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  
+  .commentCardFeatured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .commentsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .commentCardFeatured {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .sliderTitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
 } 
