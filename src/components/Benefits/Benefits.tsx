@@ -38,12 +38,17 @@ export default function Benefits() {
   return (
     <div className={styles.benefitsSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          Поддерживаем и помогаем<br />
-          прийти к результату
-        </h2>
+        <div className={styles.headerContainer}>
+          <div className={styles.numberBlock}>
+            <span className={styles.number}>02</span>
+          </div>
+          <h2 className={styles.title}>
+            Поддерживаем и помогаем<br />
+            прийти к результату!
+          </h2>
+        </div>
         
-        <div className={styles.card}>
+        <div className={styles.tabsWrapper}>
           <div className={styles.tabContainer}>
             {tabs.map((tab, index) => (
               <button 
@@ -55,7 +60,9 @@ export default function Benefits() {
               </button>
             ))}
           </div>
-          
+        </div>
+        
+        <div className={styles.card}>
           <div className={styles.contentSection}>
             <div className={styles.contentLeft}>
               <h3 className={styles.subtitle}>

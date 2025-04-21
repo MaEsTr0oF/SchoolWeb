@@ -1,9 +1,10 @@
 .dashbord {
-  padding: 100px 0;
+	margin-top: 0px;
+  padding: 100px 0 0;
   background:linear-gradient(to right, rgba(0, 85, 119, 1) 0%, rgba(46, 116, 84, 1) 100%); 
-  min-height: 100vh; 
+  /* min-height: 100vh;  */
   display: flex;
-  align-items: center;
+  align-items: start;
   position: relative;
   overflow: hidden;
 }
@@ -21,21 +22,15 @@
   opacity: 0.5;
 }
 
-/* Убираем дополнительный оверлей, так как используем чистый градиент */
-.dashbord::after {
-  content: none;
-}
-
-
-
 .dashbord__container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 10rem 200px;
   padding: 0 15px;
-  text-align: center;
+  text-align: start;
   color: #ffffff;
   z-index: 10;
   position: relative;
+  
 }
 
 /* Усиливаем текстовые эффекты для лучшей читаемости на фоне градиента */
@@ -67,7 +62,7 @@
 }
 .dashbord__buttons {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 40px;
 }
 /* Обновляем стили кнопок для лучшего соответствия новому фону */

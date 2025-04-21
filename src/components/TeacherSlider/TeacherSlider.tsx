@@ -75,46 +75,60 @@ const TeacherSlider: React.FC = () => {
   const currentTeacher = teachersData[currentIndex];
 
   return (
-    <div className={styles.teacherSection}>
-      <div className={styles.teacherContainer}>
-        <div className={styles.textColumn}>
-          <h2 className={styles.mainTitle}>Преподаватели на связи и вне уроков!</h2>
-          <p className={styles.description}>
-            Преподаватели и кураторы доступны и вне уроков. Если возникнут вопросы или сложности, 
-            ребенок всегда сможет обратиться за помощью, и мы обязательно поможем решить любую проблему!
-          </p>
-        </div>
-        
-        <div className={styles.cardColumn}>
-          <div className={styles.teacherCard} onClick={openTeacherModal}>
-            <div className={styles.teacherImageContainer}>
-              <Image 
-                src={currentTeacher.imageUrl}
-                alt={currentTeacher.name}
-                width={220}
-                height={220}
-                className={styles.teacherImage}
-              />
+    <div className={styles.wrapper}>
+      <div className={styles.teacherSection}>
+        <div className={styles.teacherContainer}>
+          <div className={styles.leftBlock}>
+            <div className={styles.teacherCard} onClick={openTeacherModal}>
+              <div className={styles.teacherImageContainer}>
+                <Image 
+                  src={currentTeacher.imageUrl}
+                  alt={currentTeacher.name}
+                  width={100}
+                  height={100}
+                  className={styles.teacherImage}
+                />
+              </div>
+              
+              <div className={styles.teacherInfo}>
+                <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
+                <div className={styles.statusDot}></div>
+                <p className={styles.teacherBio}>{currentTeacher.bio}</p>
+              </div>
+              
+              <div className={styles.navigationControls}>
+                <button 
+                  onClick={(e) => handleButtonClick(e, prevSlide)} 
+                  className={`${styles.navButton} ${styles.prevButton}`}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <button 
+                  onClick={(e) => handleButtonClick(e, nextSlide)} 
+                  className={`${styles.navButton} ${styles.nextButton}`}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
             </div>
-            
-            <div className={styles.teacherInfo}>
-              <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
-              <p className={styles.teacherBio}>{currentTeacher.bio}</p>
-            </div>
-            
-            <div className={styles.navigationControls}>
-              <button 
-                onClick={(e) => handleButtonClick(e, prevSlide)} 
-                className={`${styles.navButton} ${styles.prevButton}`}
-              >
-                ‹
-              </button>
-              <button 
-                onClick={(e) => handleButtonClick(e, nextSlide)} 
-                className={`${styles.navButton} ${styles.nextButton}`}
-              >
-                ›
-              </button>
+          </div>
+          
+          <div className={styles.rightBlock}>
+            <div className={styles.titleBlock}>
+              <h2 className={styles.mainTitle}>
+                Преподаватели на связи <span className={styles.number}>01</span><br />
+                и вне уроков!
+              </h2>
+              <p className={styles.description}>
+                Преподаватели и кураторы доступны и вне уроков. 
+                Если возникнут вопросы или сложности, ребенок всегда
+                сможет обратиться за помощью, и мы обязательно поможем
+                решить любую проблему!
+              </p>
             </div>
           </div>
         </div>
