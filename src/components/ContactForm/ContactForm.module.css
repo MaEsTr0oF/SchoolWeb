@@ -45,7 +45,7 @@
   border-radius: 24px;
   font-size: 16px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .input::placeholder {
   color: #000;
@@ -53,6 +53,7 @@
 }
 .input:focus {
   border-color: #aad;
+  box-shadow: 0 0 0 3px rgba(170, 170, 221, 0.1);
 }
 
 .button {
@@ -65,12 +66,13 @@
   border: none;
   border-radius: 24px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .button:hover {
   background-color: #d6e8ed;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 768px) {
