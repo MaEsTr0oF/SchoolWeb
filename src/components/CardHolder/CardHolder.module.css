@@ -20,14 +20,18 @@
 
 .cardHolder__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Фиксированные 3 колонки, как на фото */
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Фиксированные 3 колонки, как на фото */
   gap: 25px;
 }
 
 /* Секция с топовыми курсами как на первом фото */
 .topCourses {
-  padding: 80px 0;
-  background-color: #e6f0f2; /* Светло-голубой фон как на фото */
+  width: 100%;
+  padding: 60px 0;
+  background-color: #f8f9fa;
 }
 
 .topCourses__container {
@@ -37,10 +41,10 @@
 }
 
 .topCourses__title {
-  text-align: center;
-  font-size: 2.5rem;
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  text-align: left;
   color: #333;
 }
 
@@ -48,139 +52,155 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .topCourses__card {
-  border-radius: 16px;
-  /* overflow: hidden; */
-  background: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .topCourses__card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.topCourses__profession {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1;
+  color: #555;
 }
 
 .topCourses__image {
   position: relative;
-  height: 180px;
-  /* overflow: hidden; */
-  background-color: #f0f0f0; /* Фон для изображений, которые могут быть прозрачными */
+  height: 210px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .topCourses__img {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform 0.3s ease;
 }
-.topCourses__img:nth-child(1) {
-	position: absolute;
-	top: -40px;
-	right: -40px;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
+
+.topCourses__card:hover .topCourses__img {
+  transform: scale(1.05);
 }
-.topCourses__sales {
+
+.topCourses__sale {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
+  background-color: #43c59e;
+  color: white;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #39C38E;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
-  z-index: 3;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .topCourses__info {
-  padding: 20px;
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .topCourses__cardTitle {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 10px;
-  color: #222;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .topCourses__details {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
   font-size: 14px;
-  color: #666;
+  color: #777;
+  gap: 8px;
+  align-items: center;
 }
 
 .topCourses__more {
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 20px;
+  text-align: right;
 }
 
 .topCourses__button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background-color: #333;
-  color: white;
+  background-color: transparent;
   border: none;
-  border-radius: 8px;
+  color: #333;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 25px;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
 }
 
 .topCourses__button:hover {
-  background-color: #555;
-  transform: translateX(3px);
-}
-
-.topCourses__buttonIcon {
-  transition: transform 0.3s ease;
-}
-
-.topCourses__button:hover .topCourses__buttonIcon {
-  transform: translateX(3px);
+  background-color: #e5e5e5;
 }
 
 /* Адаптивность для планшетов */
-@media (max-width: 992px) {
-  .cardHolder__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
+@media (max-width: 1024px) {
   .topCourses__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Адаптивность для мобильных */
-@media (max-width: 576px) {
-  .cardHolder__grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .topCourses__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+
+  .topCourses__title {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .topCourses__more {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
   .topCourses__grid {
     grid-template-columns: 1fr;
   }
-  
-  .cardHolder__title, 
+
+  .topCourses__image {
+    height: 180px;
+  }
+
   .topCourses__title {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 24px;
   }
 }

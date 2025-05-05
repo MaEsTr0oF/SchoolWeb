@@ -3,7 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-primary: 'PT Sans Caption', sans-serif;
+  --font-primary: "Montserrat", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 @theme inline {
@@ -22,10 +23,14 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: #f8f9fa;
   font-family: var(--font-primary), sans-serif;
 }
 
 * {
   font-family: var(--font-primary), sans-serif;
+}
+
+.montserrat {
+  font-family: var(--font-montserrat), sans-serif;
 }

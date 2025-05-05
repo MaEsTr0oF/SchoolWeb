@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-import { PT_Sans_Caption } from 'next/font/google';
+import { PT_Sans_Caption, Montserrat } from "next/font/google";
 
 // Настраиваем шрифт PT Sans Caption
 const ptSansCaption = PT_Sans_Caption({
-  subsets: ['cyrillic', 'latin'],
-  weight: ['400', '700'],
-  variable: '--font-primary',
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "700"],
+  variable: "--font-primary",
+});
+
+// Настраиваем шрифт Montserrat
+const montserrat = Montserrat({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -22,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body
-        className={ptSansCaption.variable}
-      >
+      <body className={`${ptSansCaption.variable} ${montserrat.variable}`}>
         {children}
       </body>
     </html>

@@ -7,6 +7,7 @@ import CommentSlider from "../components/CommentSlider/CommentSlider";
 import Benefits from "../components/Benefits/Benefits";
 import FeedbackDetail from "../components/FeedbackDetail/FeedbackDetail";
 import ContactForm from "../components/ContactForm/ContactForm";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       <CardHolder />
       <TeacherSlider />
       <FeedbackDetail />
-      <CommentSlider />	
+      <CommentSlider />
       <ContactForm />
+      <Footer />
     </div>
   );
 }

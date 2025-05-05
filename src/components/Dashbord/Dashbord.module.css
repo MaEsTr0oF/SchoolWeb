@@ -1,130 +1,288 @@
 .dashbord {
-	margin-top: 0px;
-  padding: 100px 0 0;
-  background:linear-gradient(to right, rgba(0, 85, 119, 1) 0%, rgba(46, 116, 84, 1) 100%); 
-  /* min-height: 100vh;  */
-  display: flex;
-  align-items: start;
+  width: 100%;
+  padding: 60px 0;
+  background-color: #f9fafb;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
-}
-.dashbord::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/dashbord-prog.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.5;
 }
 
 .dashbord__container {
   max-width: 1200px;
-  margin: 10rem 200px;
-  padding: 0 15px;
-  text-align: start;
-  color: #ffffff;
-  z-index: 10;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dashbord__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  
+  z-index: 2;
 }
 
-/* Усиливаем текстовые эффекты для лучшей читаемости на фоне градиента */
-.dashbord__content h1 {
-  font-size: 3.8rem;
+.dashbord__textBlock {
+  flex: 1;
+  max-width: 700px;
+}
+
+.dashbord__title {
+  font-size: 54px;
   font-weight: 700;
+  line-height: 1.1;
+  color: #222;
   margin-bottom: 20px;
-  line-height: 1.2;
-  transition: transform 0.5s ease;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.dashbord__content:hover h1 {
-  transform: scale(1.03);
-  
+.dashbord__subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 32px;
+  max-width: 500px;
 }
 
-.dashbord__content p {
-  font-size: 1.3rem;
-  margin-bottom: 40px;
-  opacity: 1;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.dashbord__content:hover p {
-  transform: scale(1.05);
-  opacity: 1;
-}
 .dashbord__buttons {
   display: flex;
-  justify-content: start;
-  gap: 40px;
-}
-/* Обновляем стили кнопок для лучшего соответствия новому фону */
-.dashbord__button {
-  padding: 16px 45px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  background-size: 200% auto;
-  transition: all 0.6s ease;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
-.dashbord__button::after {
-  content: '';
-  display: block;
+.dashbord__primaryButton {
+  padding: 12px 24px;
+  background-color: #43c59e;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashbord__primaryButton:hover {
+  background-color: #3bb38e;
+  transform: translateY(-2px);
+}
+
+.dashbord__secondaryButton {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashbord__secondaryButton:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.dashbord__students {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashbord__avatars {
+  display: flex;
+}
+
+.dashbord__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: 2px solid white;
+  margin-left: -8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dashbord__avatar:nth-child(1) {
+  background-image: url("/images/avatar1.jpg");
+  margin-left: 0;
+  z-index: 3;
+}
+
+.dashbord__avatar:nth-child(2) {
+  background-image: url("/images/avatar2.jpg");
+  z-index: 2;
+}
+
+.dashbord__avatar:nth-child(3) {
+  background-image: url("/images/avatar3.jpg");
+  z-index: 1;
+}
+
+.dashbord__studentsText {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+.dashbord__imageBlock {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashbord__imageBlock::before {
+  content: "";
   position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #43c59e;
+  right: 100px;
+  top: 100px;
+  z-index: 1;
+}
+
+.dashbord__laptopWrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+}
+
+.dashbord__laptop {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* Стили для заглушки ноутбука */
+.dashbord__placeholderLaptop {
+  width: 100%;
+  max-width: 520px;
+  height: 400px;
+  position: relative;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+.dashbord__screen {
+  width: 100%;
+  height: 75%;
+  background-color: #1e1e1e;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #333;
+}
+
+.dashbord__code {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  transform: scale(10, 10);
-  opacity: 0;
-  transition: transform 0.5s, opacity 1s;
+  background-image: linear-gradient(to right, #39c38e 5px, transparent 5px),
+    linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 100% 20px, 100% 20px;
+  animation: codeBlink 2s infinite;
 }
 
-.dashbord__button:active::after {
-  transform: scale(0, 0);
-  opacity: 0.3;
-  transition: 0s;
+.dashbord__keyboard {
+  width: 100%;
+  height: 25%;
+  background-color: #ddd;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  background-image: linear-gradient(to bottom, #eee, #ccc);
 }
 
-.dashbord__button:first-child {
-  background-image: linear-gradient(to right, rgba(0, 146, 204, 1) 0%, rgba(125, 212, 172, 1) 50%, rgba(0, 146, 204, 1) 100%);
-  background-size: 200% auto;
-  color: #fff;
-  border: none;
+@keyframes codeBlink {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-.dashbord__button:first-child:hover {
-  background-position: right center;
-  transform: scale(1.05);
+@media (max-width: 1024px) {
+  .dashbord__title {
+    font-size: 46px;
+  }
+
+  .dashbord__imageBlock::before {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+  }
 }
 
-.dashbord__button:last-child {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  transition: all 0.6s ease;
+@media (max-width: 768px) {
+  .dashbord__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dashbord__textBlock {
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+
+  .dashbord__subtitle {
+    margin: 0 auto 32px;
+  }
+
+  .dashbord__buttons {
+    justify-content: center;
+  }
+
+  .dashbord__students {
+    justify-content: center;
+  }
+
+  .dashbord__imageBlock::before {
+    width: 400px;
+    height: 400px;
+    right: -50px;
+    top: -100px;
+  }
+
+  .dashbord__title {
+    font-size: 40px;
+  }
+
+  .dashbord__placeholderLaptop {
+    max-width: 400px;
+    height: 300px;
+  }
 }
 
-.dashbord__button:last-child:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border-color: #fff;
-  transform: scale(1.05);
+@media (max-width: 576px) {
+  .dashbord__title {
+    font-size: 36px;
+  }
+
+  .dashbord__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dashbord__primaryButton,
+  .dashbord__secondaryButton {
+    width: 100%;
+  }
+
+  .dashbord__imageBlock::before {
+    width: 300px;
+    height: 300px;
+    right: -50px;
+    top: -50px;
+  }
+
+  .dashbord__placeholderLaptop {
+    max-width: 300px;
+    height: 220px;
+  }
 }

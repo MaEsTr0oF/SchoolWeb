@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# SchoolWeb
+
+## Необходимо добавить изображения для Dashboard
+
+Для правильной работы Dashboard компонента, необходимо добавить следующие изображения:
+
+1. `/public/images/laptop-code.png` - изображение ноутбука с кодом на экране (используется в главном блоке)
+
+   - Рекомендуемое разрешение: 600x400px
+   - Формат: PNG с прозрачным фоном
+
+2. Аватары пользователей (опционально):
+   - `/public/images/avatar1.jpg`
+   - `/public/images/avatar2.jpg`
+   - `/public/images/avatar3.jpg`
+
+### Временная замена:
+
+Пока не добавлены нужные изображения, компонент использует временные заглушки. Для полного соответствия макету необходимо добавить указанные файлы.
