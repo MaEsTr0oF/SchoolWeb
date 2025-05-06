@@ -1,0 +1,381 @@
+.coursePage {
+  padding: 40px 0 60px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.breadcrumbs a {
+  color: #6c757d;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.breadcrumbs a:first-child {
+  margin-left: 0;
+}
+
+.breadcrumbs a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  color: #343a40;
+  margin-left: 5px;
+}
+
+/* Заголовок курса */
+.courseHeader {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.courseInfo {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.courseTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.courseDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.courseMetaInfo {
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+.courseStartDate {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #666;
+}
+
+.coursePrice {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.priceLabel {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.priceValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.enrollButton {
+  background-color: #43c59e;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.enrollButton:hover {
+  background-color: #3bb48f;
+}
+
+.courseImageContainer {
+  height: 100%;
+  overflow: hidden;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Секция преподавателя */
+.teacherSection {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.teacherInfo {
+  display: flex;
+  align-items: center;
+}
+
+.teacherAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.teacherAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teacherName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.teacherRating {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.ratingValue {
+  margin-right: 5px;
+}
+
+.ratingIcon {
+  color: #ffca28;
+}
+
+/* Секция навыков */
+.skillsSection {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.skillIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #e9f5ff;
+  color: #0077ff;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Секция с похожими курсами */
+.relatedCoursesSection {
+  margin-bottom: 40px;
+}
+
+.relatedCoursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.relatedCourseCard {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.relatedCourseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.relatedCourseImage {
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+
+.relatedCourseImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.relatedCourseCard:hover .relatedCourseImage img {
+  transform: scale(1.05);
+}
+
+.relatedCourseSale {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  rotate: 15deg;
+}
+.relatedCourseSale img {
+  width: 80px;
+  height: 80px;
+}
+.relatedCourseInfo {
+  padding: 15px;
+}
+
+.relatedCourseTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.relatedCourseDetails {
+  display: flex;
+  font-size: 14px;
+  color: #777;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Страница ошибки "Курс не найден" */
+.courseNotFound {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 200px);
+}
+
+.courseNotFound h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.courseNotFound p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.backLink:hover {
+  background-color: #0069d9;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .courseHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .courseImageContainer {
+    height: 300px;
+    order: -1;
+  }
+
+  .relatedCoursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courseHeader {
+    margin-bottom: 30px;
+  }
+
+  .courseInfo {
+    padding: 20px;
+  }
+
+  .courseTitle {
+    font-size: 26px;
+  }
+
+  .skillsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .relatedCoursesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .courseTitle {
+    font-size: 22px;
+  }
+
+  .courseImageContainer {
+    height: 200px;
+  }
+}

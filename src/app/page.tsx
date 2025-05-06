@@ -8,6 +8,7 @@ import Benefits from "../components/Benefits/Benefits";
 import FeedbackDetail from "../components/FeedbackDetail/FeedbackDetail";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Footer from "../components/Footer/Footer";
+import TeachingMethods from "../components/TeachingMethods/TeachingMethods";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Dashbord />
       <AboutUs />
       <CardHolder />
+      <TeachingMethods />
       <TeacherSlider />
       <FeedbackDetail />
       <CommentSlider />

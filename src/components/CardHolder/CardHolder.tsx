@@ -1,3 +1,4 @@
+import Link from "next/link"; // Добавляем импорт Link
 import Card from "../Card/Card"; // Импортируем компонент Card
 import styles from "./CardHolder.module.css";
 import React from "react";
@@ -188,14 +189,23 @@ export default function CardHolder() {
           </h2>
           <div className={styles.topCourses__grid}>
             {topCoursesData.map((course) => (
-              <div key={course.id} className={styles.topCourses__card}>
+              <Link
+                key={course.id}
+                href={`/courses/${course.id}`}
+                className={styles.topCourses__card}
+              >
                 <span className={styles.topCourses__profession}>
                   {course.profession}
                 </span>
                 <div className={styles.topCourses__image}>
                   {course.sales && (
                     <div className={styles.topCourses__sale}>
-                      {course.sales}
+                      <img
+                        src="/sales.svg"
+                        alt="Скидка"
+                        width={45}
+                        height={45}
+                      />
                     </div>
                   )}
                   <img
@@ -214,13 +224,13 @@ export default function CardHolder() {
                     <span>{course.salary}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className={styles.topCourses__more}>
-            <button className={styles.topCourses__button}>
+            <Link href="/courses" className={styles.topCourses__button}>
               Больше курсов →
-            </button>
+            </Link>
           </div>
         </div>
       </div>

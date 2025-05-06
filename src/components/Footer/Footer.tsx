@@ -59,7 +59,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses" className={styles.link}>
                   Все курсы
                 </Link>
               </li>
@@ -76,7 +76,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/teaching-methods" className={styles.link}>
                   Методы преподавания
                 </Link>
               </li>

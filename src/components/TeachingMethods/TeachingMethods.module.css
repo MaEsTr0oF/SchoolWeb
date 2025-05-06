@@ -1,0 +1,140 @@
+.teachingMethods {
+  padding: 60px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #333;
+  text-align: left;
+}
+
+.methodsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.methodItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.methodNumber {
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+}
+
+.methodContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.methodText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.methodTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.methodDescription {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+.methodLink {
+  color: #777;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.methodLink:hover {
+  text-decoration: underline;
+}
+
+.methodImageWrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 581.12 / 154.48;
+  width: 100%;
+}
+
+.methodImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Правильное чередование расположения текста и изображений */
+.methodItem:nth-child(odd) .methodContent {
+  grid-template-columns: 1fr 1fr;
+}
+
+.methodItem:nth-child(even) .methodContent {
+  grid-template-columns: 1fr 1fr;
+}
+
+.methodItem:nth-child(even) .methodImageWrapper {
+  order: -1;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .methodContent {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .methodItem:nth-child(even) .methodImageWrapper,
+  .methodItem:nth-child(odd) .methodImageWrapper {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .teachingMethods {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .methodsGrid {
+    gap: 30px;
+  }
+
+  .methodTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teachingMethods {
+    padding: 30px 15px;
+  }
+
+  .methodsGrid {
+    gap: 25px;
+  }
+}

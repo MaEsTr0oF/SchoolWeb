@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${ptSansCaption.variable} ${montserrat.variable}`}>
-        {children}
+        <div className="app-container">{children}</div>
       </body>
     </html>
   );

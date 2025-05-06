@@ -1,0 +1,259 @@
+.teachingMethodsPage {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.pageTitle {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #333;
+  text-align: center;
+}
+
+/* Список методов */
+.methodsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.methodItem {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.methodNumber {
+  font-size: 24px;
+  font-weight: 700;
+  color: #777;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  line-height: 1;
+  z-index: 1;
+}
+
+.methodContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.methodContent.methodContentReverse {
+  flex-direction: column;
+}
+
+.methodInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+.methodTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  margin-top: 0;
+}
+
+.methodDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.methodLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0077ff;
+  text-decoration: none;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.methodLink:hover {
+  text-decoration: underline;
+}
+
+.methodImageContainer {
+  border-radius: 25px;
+  overflow: hidden;
+  height: 230px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.methodImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Макет сетки */
+.methodItem:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.methodItem:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.methodItem:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.methodItem:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.methodItem:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Дополнительная информация */
+.additionalInfo {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.additionalTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.additionalText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: #43c59e;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .methodsList {
+    grid-template-columns: 1fr;
+  }
+
+  .methodItem:nth-child(n) {
+    grid-column: 1;
+  }
+
+  .methodItem:nth-child(1) {
+    grid-row: 1;
+  }
+  .methodItem:nth-child(2) {
+    grid-row: 2;
+  }
+  .methodItem:nth-child(3) {
+    grid-row: 3;
+  }
+  .methodItem:nth-child(4) {
+    grid-row: 4;
+  }
+  .methodItem:nth-child(5) {
+    grid-row: 5;
+  }
+
+  .methodImageContainer {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .methodNumber {
+    font-size: 20px;
+  }
+
+  .methodTitle {
+    font-size: 24px;
+  }
+
+  .additionalInfo {
+    padding: 30px;
+  }
+
+  .additionalTitle {
+    font-size: 22px;
+  }
+
+  .statItem {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teachingMethodsPage {
+    padding: 40px 0;
+  }
+
+  .methodImageContainer {
+    height: 200px;
+  }
+
+  .statValue {
+    font-size: 28px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+  }
+}
