@@ -6,6 +6,7 @@ import TeacherSlider from "../components/TeacherSlider/TeacherSlider";
 import CommentSlider from "../components/CommentSlider/CommentSlider";
 import FeedbackDetail from "../components/FeedbackDetail/FeedbackDetail";
 import ContactForm from "../components/ContactForm/ContactForm";
+import Collaboration from "../components/Collaboration/Collaboration";
 import Footer from "../components/Footer/Footer";
 import MainLayout from "../components/Layout/MainLayout";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <TeacherSlider />
         <FeedbackDetail />
         <CommentSlider />
+        <Collaboration />
         <ContactForm />
       </MainLayout>
       <Footer form={false} />

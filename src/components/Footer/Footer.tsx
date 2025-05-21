@@ -1,12 +1,63 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import styles from "./Footer.module.css";
+import RegistrationModal from "../RegistrationModal/RegistrationModal";
 
 interface FooterProps {
   form?: boolean;
 }
 
 export default function Footer({ form = false }: FooterProps) {
+  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
+  
+  const openRegistrationModal = () => setIsRegistrationModalOpen(true);
+  const closeRegistrationModal = () => setIsRegistrationModalOpen(false);
+
+  // Скрыть форму ContactForm при открытии модального окна
+  useEffect(() => {
+    // Используем несколько селекторов для надежности
+    const selectors = [
+      '[class*="ContactForm_formSection"]',
+      '.formSection',
+      '[class*="formSection"]'
+    ];
+    
+    // Пытаемся найти форму по разным селекторам
+    let contactForm: HTMLElement | null = null;
+    for (const selector of selectors) {
+      const element = document.querySelector(selector);
+      if (element) {
+        contactForm = element as HTMLElement;
+        break;
+      }
+    }
+    
+    // Если нашли форму, управляем ее отображением
+    if (contactForm) {
+      if (isRegistrationModalOpen) {
+        contactForm.style.display = 'none';
+      } else {
+        contactForm.style.display = 'block';
+      }
+    }
+    
+    // Блокировка скролла при открытом модальном окне
+    if (isRegistrationModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      if (contactForm) {
+        contactForm.style.display = 'block';
+      }
+    };
+  }, [isRegistrationModalOpen]);
+
   return (
     <footer className={styles.footer} style={{paddingTop: form ? "0px" : "80px"}}>
       <div className={styles.container}>
@@ -16,27 +67,27 @@ export default function Footer({ form = false }: FooterProps) {
             <h3 className={styles.sectionTitle}>Курсы</h3>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/1" className={styles.link}>
                   Программист
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/2" className={styles.link}>
                   Python разработчик
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/3" className={styles.link}>
                   Дизайнер
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/4" className={styles.link}>
                   Тестировщик
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/5" className={styles.link}>
                   3D-дженералист
                 </Link>
               </li>
@@ -48,17 +99,17 @@ export default function Footer({ form = false }: FooterProps) {
             <h3 className={styles.sectionTitle}>&nbsp;</h3>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/6" className={styles.link}>
                   Data Scientist
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/7" className={styles.link}>
                   Веб-разработчик
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/courses/8" className={styles.link}>
                   Веб-дизайнер
                 </Link>
               </li>
@@ -75,7 +126,7 @@ export default function Footer({ form = false }: FooterProps) {
             <h3 className={styles.sectionTitle}>Код к знаниям</h3>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#about-us" className={styles.link}>
                   О нас
                 </Link>
               </li>
@@ -85,29 +136,27 @@ export default function Footer({ form = false }: FooterProps) {
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/teachers" className={styles.link}>
                   Преподаватели
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#career-center" className={styles.link}>
                   Центр карьеры
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#reviews" className={styles.link}>
                   Отзывы
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
-                  О платформе
-                </Link>
-              </li>
-              <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <a href="#" onClick={(e) => {
+                  e.preventDefault(); 
+                  openRegistrationModal();
+                }} className={styles.link}>
                   Оплата
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -117,22 +166,22 @@ export default function Footer({ form = false }: FooterProps) {
             <h3 className={styles.sectionTitle}>Сотрудничество</h3>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#discounts" className={styles.link}>
                   Скидки для друзей
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#partners" className={styles.link}>
                   Партнерская программа
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#corporate" className={styles.link}>
                   Корпоративным клиентам
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link href="#" className={styles.link}>
+                <Link href="/#employers" className={styles.link}>
                   Работодателям
                 </Link>
               </li>
@@ -170,6 +219,8 @@ export default function Footer({ form = false }: FooterProps) {
           </div>
         </div>
       </div>
+
+      <RegistrationModal isOpen={isRegistrationModalOpen} onClose={closeRegistrationModal} />
     </footer>
   );
 }

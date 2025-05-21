@@ -13,7 +13,7 @@ export default function FeedbackDetail() {
   ];
   
   return (
-    <div className={styles.feedbackDetailSection}>
+    <div className={styles.feedbackDetailSection} id='career-center'>
       <div className={styles.container}>
         <div className={styles.headerContainer}>
           

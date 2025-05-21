@@ -182,7 +182,7 @@ const topCoursesData = [
 export default function CardHolder() {
   return (
     <>
-      <div className={styles.topCourses}>
+      <div className={styles.topCourses} >
         <div className={styles.topCourses__container}>
           <h2 className={styles.topCourses__title}>
             Курсы по ведущим профессиям

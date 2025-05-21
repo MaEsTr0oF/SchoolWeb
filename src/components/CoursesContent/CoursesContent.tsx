@@ -1,6 +1,6 @@
 import styles from "./CoursesContent.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const topCoursesData = [
 	{
@@ -11,6 +11,9 @@ const topCoursesData = [
 	  image: "/images/courses/1.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "paid",
+	  durationMonths: 9,
+	  hasEmployment: true,
 	},
 	{
 	  id: 2,
@@ -20,6 +23,9 @@ const topCoursesData = [
 	  image: "/images/courses/2.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "paid",
+	  durationMonths: 12,
+	  hasEmployment: true,
 	},
 	{
 	  id: 3,
@@ -29,6 +35,9 @@ const topCoursesData = [
 	  image: "/images/courses/3.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "paid",
+	  durationMonths: 5,
+	  hasEmployment: true,
 	},
 	{
 	  id: 4,
@@ -38,6 +47,9 @@ const topCoursesData = [
 	  image: "/images/courses/4.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "paid",
+	  durationMonths: 4,
+	  hasEmployment: false,
 	},
 	{
 	  id: 5,
@@ -47,6 +59,9 @@ const topCoursesData = [
 	  image: "/images/courses/5.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "paid",
+	  durationMonths: 9,
+	  hasEmployment: true,
 	},
 	{
 	  id: 6,
@@ -56,6 +71,9 @@ const topCoursesData = [
 	  image: "/images/courses/6.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "free",
+	  durationMonths: 12,
+	  hasEmployment: true,
 	},
 	{
 	  id: 7,
@@ -65,6 +83,9 @@ const topCoursesData = [
 	  image: "/images/courses/7.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "free",
+	  durationMonths: 5,
+	  hasEmployment: false,
 	},
 	{
 	  id: 8,
@@ -74,6 +95,9 @@ const topCoursesData = [
 	  image: "/images/courses/8.png",
 	  profession: "Профессия",
 	  sales: "-50%",
+	  cost: "free",
+	  durationMonths: 4,
+	  hasEmployment: false,
 	},
 ];
 
@@ -97,6 +121,22 @@ export default function CoursesContent() {
 	  },
 	});
 
+    // Состояние для отслеживания выбранных фильтров
+    const [filterState, setFilterState] = useState({
+        cost: {
+            anySelected: true,
+            allSelected: false
+        },
+        duration: {
+            anySelected: true,
+            allSelected: false
+        },
+        employment: {
+            anySelected: false,
+            allSelected: false
+        }
+    });
+
 	// Добавляем состояние для активных фильтров в верхнем меню
 	const [activeFilterButtons, setActiveFilterButtons] = useState<string[]>([]);
 
@@ -111,6 +151,25 @@ export default function CoursesContent() {
 	  "Для детей",
 	  "Скидки",
 	];
+	
+	// Обновление состояния фильтров
+    useEffect(() => {
+        // Проверяем, выбраны ли все или хотя бы один фильтр в каждой категории
+        setFilterState({
+            cost: {
+                anySelected: Object.values(selectedFilters.cost).some(v => v),
+                allSelected: Object.values(selectedFilters.cost).every(v => v)
+            },
+            duration: {
+                anySelected: Object.values(selectedFilters.duration).some(v => v),
+                allSelected: Object.values(selectedFilters.duration).every(v => v)
+            },
+            employment: {
+                anySelected: Object.values(selectedFilters.employment).some(v => v),
+                allSelected: Object.values(selectedFilters.employment).every(v => v)
+            }
+        });
+    }, [selectedFilters]);
 
 	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 	  setSearchTerm(e.target.value);
@@ -141,68 +200,54 @@ export default function CoursesContent() {
 
 	// Фильтрация курсов
 	const filteredCourses = topCoursesData.filter((course) => {
-	  // Фильтрация по поиску
-	  if (
-		 searchTerm &&
-		 !course.title.toLowerCase().includes(searchTerm.toLowerCase())
-	  ) {
-		 return false;
-	  }
+        // Проверяем, есть ли хотя бы один выбранный фильтр в каждой категории
+        if (!filterState.cost.anySelected || 
+            !filterState.duration.anySelected || 
+            !filterState.employment.anySelected && Object.values(selectedFilters.employment).some(v => v === true)) {
+            return false;
+        }
 
-	  // Фильтрация по стоимости
-	  const hasActiveFilters = Object.values(selectedFilters.cost).some(
-		 (value) => value
-	  );
-	  if (hasActiveFilters) {
-		 const isPaid = [1, 2, 3, 5].includes(course.id);
-		 if (
-			(selectedFilters.cost.paid && !isPaid) ||
-			(selectedFilters.cost.free && isPaid)
-		 ) {
-			return false;
-		 }
-	  }
+        // Фильтрация по поиску
+        if (searchTerm && !course.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return false;
+        }
 
-	  // Фильтрация по длительности
-	  const hasDurationFilters = Object.values(selectedFilters.duration).some(
-		 (value) => value
-	  );
-	  if (hasDurationFilters) {
-		 const durationInMonths = parseInt(course.duration.split(" ")[0]);
+        // Фильтрация по стоимости (если не все выбраны)
+        if (!filterState.cost.allSelected) {
+            if ((selectedFilters.cost.paid && course.cost !== "paid") || 
+                (selectedFilters.cost.free && course.cost !== "free")) {
+                return false;
+            }
+        }
 
-		 if (
-			(selectedFilters.duration.upTo1Month && durationInMonths > 1) ||
-			(selectedFilters.duration.from1To3Months &&
-			  (durationInMonths < 1 || durationInMonths > 3)) ||
-			(selectedFilters.duration.from3To6Months &&
-			  (durationInMonths < 3 || durationInMonths > 6)) ||
-			(selectedFilters.duration.from6To12Months &&
-			  (durationInMonths < 6 || durationInMonths > 12)) ||
-			(selectedFilters.duration.over12Months && durationInMonths <= 12)
-		 ) {
-			// Если курс не соответствует ни одному из выбранных фильтров по длительности
-			if (Object.values(selectedFilters.duration).some((value) => value)) {
-			  return false;
-			}
-		 }
-	  }
+        // Фильтрация по длительности (если не все выбраны)
+        if (!filterState.duration.allSelected) {
+            const durationMonths = course.durationMonths;
+            
+            const matchesDuration = 
+                (selectedFilters.duration.upTo1Month && durationMonths <= 1) || 
+                (selectedFilters.duration.from1To3Months && durationMonths > 1 && durationMonths <= 3) ||
+                (selectedFilters.duration.from3To6Months && durationMonths > 3 && durationMonths <= 6) ||
+                (selectedFilters.duration.from6To12Months && durationMonths > 6 && durationMonths <= 12) ||
+                (selectedFilters.duration.over12Months && durationMonths > 12);
+                
+            if (!matchesDuration) {
+                return false;
+            }
+        }
 
-	  const hasEmploymentFilters = Object.values(selectedFilters.employment).some(
-		 (value) => value
-	  );
-	  if (hasEmploymentFilters) {
-		 const hasEmploymentOption = course.duration.includes("месяц");
+        // Фильтрация по трудоустройству (если не все выбраны и есть выбранные)
+        if (!filterState.employment.allSelected && filterState.employment.anySelected) {
+            const hasEmployment = course.hasEmployment;
+            
+            if ((selectedFilters.employment.withEmployment && !hasEmployment) || 
+                (selectedFilters.employment.withoutEmployment && hasEmployment)) {
+                return false;
+            }
+        }
 
-		 if (
-			(selectedFilters.employment.withEmployment && !hasEmploymentOption) ||
-			(selectedFilters.employment.withoutEmployment && hasEmploymentOption)
-		 ) {
-			return false;
-		 }
-	  }
-
-	  return true;
-	});
+        return true;
+    });
 
 	return (
 	  <>
@@ -265,42 +310,49 @@ export default function CoursesContent() {
 				 
  
 				 <div className={styles.coursesGrid}>
-					{filteredCourses.map((course) => (
-					  <Link
-						 key={course.id}
-						 href={`/courses/${course.id}`}
-						 className={styles.courseCard}
-					  >
-						 <span className={styles.courseProfession}>
-							{course.profession}
-						 </span>
-						 <div className={styles.courseImage}>
-							{course.sales && (
-							  <div className={styles.courseSale}>
-								 <img
-									src="/sales.svg"
-									alt="Скидка"
-									width={45}
-									height={45}
-								 />
-							  </div>
-							)}
-							<img
-							  src={course.image}
-							  alt={course.title}
-							  className={styles.courseImg}
-							/>
-						 </div>
-						 <div className={styles.courseInfo}>
-							<h3 className={styles.courseTitle}>{course.title}</h3>
-							<div className={styles.courseDetails}>
-							  <span>{course.duration}</span>
-							  <span>•</span>
-							  <span>{course.salary}</span>
-							</div>
-						 </div>
-					  </Link>
-					))}
+                    {filteredCourses.length > 0 ? (
+                        filteredCourses.map((course) => (
+                            <Link
+                                key={course.id}
+                                href={`/courses/${course.id}`}
+                                className={styles.courseCard}
+                            >
+                                <span className={styles.courseProfession}>
+                                    {course.profession}
+                                </span>
+                                <div className={styles.courseImage}>
+                                    {course.sales && (
+                                    <div className={styles.courseSale}>
+                                        <img
+                                            src="/sales.svg"
+                                            alt="Скидка"
+                                            width={45}
+                                            height={45}
+                                        />
+                                    </div>
+                                    )}
+                                    <img
+                                    src={course.image}
+                                    alt={course.title}
+                                    className={styles.courseImg}
+                                    />
+                                </div>
+                                <div className={styles.courseInfo}>
+                                    <h3 className={styles.courseTitle}>{course.title}</h3>
+                                    <div className={styles.courseDetails}>
+                                    <span>{course.duration}</span>
+                                    <span>•</span>
+                                    <span>{course.salary}</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))
+                    ) : (
+                        <div className={styles.noCoursesMessage}>
+                            <p>Нет курсов, соответствующих выбранным фильтрам</p>
+                            <p>Пожалуйста, измените параметры фильтрации</p>
+                        </div>
+                    )}
 				 </div>
  
 				 <div className={styles.sidebar}>

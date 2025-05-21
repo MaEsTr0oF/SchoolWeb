@@ -119,7 +119,7 @@ const CommentSlider: React.FC = () => {
   };
 
   return (
-    <div className={styles.sliderSection}>
+    <div className={styles.sliderSection} id='reviews'>
       <h2 className={styles.sliderTitle}>Отзывы наших учеников</h2>
       <div className={styles.sliderOuterContainer}>
         <div className={styles.sliderViewPort}>

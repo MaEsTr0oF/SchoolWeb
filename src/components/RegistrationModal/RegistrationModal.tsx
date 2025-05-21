@@ -55,84 +55,93 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     setIsSelectOpen(false);
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Форма отправлена", selectedCourse);
+    // Здесь будет логика обработки оплаты
+    // После успешной обработки закрываем модальное окно
+    // onClose();
+  };
+
   return (
     <div className={styles.modalOverlay} onClick={handleOverlayClick}>
       <div className={styles.modalContent}>
         <h2 className={styles.modalTitle}>Онлайн запись</h2>
         
-        <div className={styles.formGroup}>
-          <label htmlFor="fullName" className={styles.formLabel}>
-            ФИО <span className={styles.requiredField}>*</span>
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            className={styles.formInput}
-            required
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="phone" className={styles.formLabel}>
-            Телефон <span className={styles.requiredField}>*</span>
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            className={styles.formInput}
-            required
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="email" className={styles.formLabel}>
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className={styles.formInput}
-          />
-          <p className={styles.infoText}>
-            *Информация по выбранному курсу придет вам на почту.
-          </p>
-        </div>
-
-        <div className={styles.formGroup}>
-          
-          <div className={styles.customSelect} ref={selectRef}>
-            <div 
-              className={`${styles.selectControl} ${isSelectOpen ? styles.active : ''}`} 
-              onClick={toggleSelect}
-            >
-              <span className={selectedCourse.value === "" ? styles.placeholder : ""}>
-                {selectedCourse.label}
-              </span>
-              <span className={`${styles.selectArrow} ${isSelectOpen ? styles.open : ''}`}>
-                ▼
-              </span>
-            </div>
-            {isSelectOpen && (
-              <div className={styles.selectOptions}>
-                {courses.map((course, index) => (
-                  course.value !== "" && (
-                    <div
-                      key={index}
-                      className={`${styles.selectOption} ${selectedCourse.value === course.value ? styles.selected : ''}`}
-                      onClick={() => handleSelectOption(course)}
-                    >
-                      {course.label}
-                    </div>
-                  )
-                ))}
-              </div>
-            )}
+        <form onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label htmlFor="fullName" className={styles.formLabel}>
+              ФИО <span className={styles.requiredField}>*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              className={styles.formInput}
+              required
+            />
           </div>
-        </div>
 
-        <button className={styles.submitButton}>
-          Перейти к оплате
-        </button>
+          <div className={styles.formGroup}>
+            <label htmlFor="phone" className={styles.formLabel}>
+              Телефон <span className={styles.requiredField}>*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              className={styles.formInput}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="email" className={styles.formLabel}>
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className={styles.formInput}
+            />
+            <p className={styles.infoText}>
+              *Информация по выбранному курсу придет вам на почту.
+            </p>
+          </div>
+
+          <div className={styles.formGroup}>
+            <div className={styles.customSelect} ref={selectRef}>
+              <div 
+                className={`${styles.selectControl} ${isSelectOpen ? styles.active : ''}`} 
+                onClick={toggleSelect}
+              >
+                <span className={selectedCourse.value === "" ? styles.placeholder : ""}>
+                  {selectedCourse.label}
+                </span>
+                <span className={`${styles.selectArrow} ${isSelectOpen ? styles.open : ''}`}>
+                  ▼
+                </span>
+              </div>
+              {isSelectOpen && (
+                <div className={styles.selectOptions}>
+                  {courses.map((course, index) => (
+                    course.value !== "" && (
+                      <div
+                        key={index}
+                        className={`${styles.selectOption} ${selectedCourse.value === course.value ? styles.selected : ''}`}
+                        onClick={() => handleSelectOption(course)}
+                      >
+                        {course.label}
+                      </div>
+                    )
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <button type="submit" className={styles.submitButton}>
+            Перейти к оплате
+          </button>
+        </form>
       </div>
     </div>
   );

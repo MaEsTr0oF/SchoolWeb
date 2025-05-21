@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function AboutUs() {
 	return (
 		<div>
-			<div className={styles.aboutUs}>
+			<div className={styles.aboutUs} id='about-us'>
 				<div className={styles.aboutUs__container}>
 					<div className={styles.aboutUs__content}>
 						<div className={styles.aboutUs__cards}>
