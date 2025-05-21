@@ -8,9 +8,9 @@
 }
 
 .dashbord__container {
-  max-width: 1200px;
+  
   margin: 0 auto;
-  padding: 0 20px;
+  
 }
 
 .dashbord__content {
@@ -49,7 +49,8 @@
 
 .dashbord__primaryButton {
   padding: 12px 24px;
-  background-color: #43c59e;
+  background: linear-gradient(257.25deg, #0092CC 0%, #51C791 99.29%);
+
   color: white;
   border: none;
   border-radius: 50px;
@@ -92,8 +93,8 @@
 }
 
 .dashbord__avatar {
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: #ddd;
   border: 2px solid white;
@@ -101,27 +102,11 @@
   background-size: cover;
   background-position: center;
 }
-
-.dashbord__avatar:nth-child(1) {
-  background-image: url("/images/avatar1.jpg");
-  margin-left: 0;
-  z-index: 3;
-}
-
-.dashbord__avatar:nth-child(2) {
-  background-image: url("/images/avatar2.jpg");
-  z-index: 2;
-}
-
-.dashbord__avatar:nth-child(3) {
-  background-image: url("/images/avatar3.jpg");
-  z-index: 1;
-}
-
 .dashbord__studentsText {
-  font-size: 15px;
-  color: #555;
-  font-weight: 500;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+  text-wrap: nowrap;
 }
 
 .dashbord__imageBlock {
@@ -135,26 +120,26 @@
 .dashbord__imageBlock::before {
   content: "";
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  background-color: #43c59e;
-  right: 100px;
-  top: 100px;
+  background: linear-gradient(257.25deg, #0092cc 0%, #51c791 99.29%);
+  right: 40px;
+  top: -200px;
   z-index: 1;
 }
 
 .dashbord__laptopWrapper {
-  position: relative;
+  position: absolute;
   z-index: 2;
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 520px;
+  width: 700px;
 }
 
 .dashbord__laptop {
-  width: 100%;
+  position: relative;
+  width: 800px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
@@ -163,7 +148,7 @@
 /* Стили для заглушки ноутбука */
 .dashbord__placeholderLaptop {
   width: 100%;
-  max-width: 520px;
+  /* max-width: 520px; */
   height: 400px;
   position: relative;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));

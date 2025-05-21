@@ -36,9 +36,9 @@ export default function Dashbord() {
 
             <div className={styles.dashbord__students}>
               <div className={styles.dashbord__avatars}>
-                <div className={styles.dashbord__avatar}></div>
-                <div className={styles.dashbord__avatar}></div>
-                <div className={styles.dashbord__avatar}></div>
+                <div className={styles.dashbord__avatar}><img src="/images/avatar1.png" alt="Аватар" /></div>
+                <div className={styles.dashbord__avatar}><img src="/images/avatar2.png" alt="Аватар" /></div>
+                <div className={styles.dashbord__avatar}><img src="/images/avatar3.png" alt="Аватар" /></div>
               </div>
               <p className={styles.dashbord__studentsText}>
                 100+ выпустившихся учеников!
@@ -59,8 +59,8 @@ export default function Dashbord() {
                 <Image
                   src="/images/laptop-code.png"
                   alt="Ноутбук с кодом"
-                  width={600}
-                  height={400}
+                  width={700}
+                  height={700}
                   className={styles.dashbord__laptop}
                   priority
                   onError={handleImageError}

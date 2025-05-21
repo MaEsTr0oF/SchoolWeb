@@ -1,0 +1,48 @@
+.mainContent {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px; /* Отступы по умолчанию для мобильных устройств */
+  padding-right: 20px;
+  box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+/* Экраны 768px и более */
+@media (min-width: 768px) {
+  .mainContent {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* Экраны 1024px - 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .mainContent {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Экраны 1280px - 1439px */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .mainContent {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Экраны 1440px - 1919px */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .mainContent {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+}
+
+/* Экраны 1920px и более */
+@media (min-width: 1920px) {
+  .mainContent {
+    padding-left: 256px;
+    padding-right: 256px;
+  }
+} 

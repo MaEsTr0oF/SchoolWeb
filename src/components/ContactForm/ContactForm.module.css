@@ -51,18 +51,19 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  background:transparent ;
 }
 
 .formSection input {
   height: 50px;
   padding: 0 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 1);
   border-radius: 30px;
   font-size: 16px;
   flex: 1;
   min-width: 150px;
   outline: none;
-  background-color: #fff;
+  background:transparent;
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

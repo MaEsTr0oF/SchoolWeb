@@ -1,0 +1,211 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modalTitle {
+	color:black;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.requiredField {
+  color: red;
+}
+
+.formInput {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.infoText {
+  font-size: 12px;
+  color: #777;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.selectWrapper {
+  color: black;
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.selectWrapper::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+.formSelect {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 0 10px;
+  outline: none;
+}
+
+/* Стили для выпадающего списка */
+.formSelect option {
+  padding: 10px;
+}
+
+.formSelect option:checked {
+  background-color: #2979ff;
+  color: white;
+}
+
+.formSelect option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Стили для placeholder */
+.formSelect option[disabled] {
+  color: #999;
+}
+
+.submitButton {
+  display: block;
+  width: max-content;
+  margin: 30px auto 0;
+  padding: 10px 30px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Кастомный селект */
+.customSelect {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 5px;
+  color:black;
+}
+
+.selectControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.selectControl.active {
+  border-color: #3175e8;
+  border-radius: 4px 4px 0 0;
+}
+
+.selectArrow {
+  font-size: 10px;
+  color: #777;
+  transition: transform 0.2s;
+}
+
+.selectArrow.open {
+  transform: rotate(180deg);
+}
+
+.placeholder {
+  color: #777;
+}
+
+.selectOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.selectOption {
+  padding: 12px 10px;
+  transition: background-color 0.2s;
+}
+
+.selectOption:hover {
+  background-color: #f0f0f0;
+}
+
+.selected {
+  background-color: #3175e8;
+  color: white;
+}
+
+.selectOption:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+} 

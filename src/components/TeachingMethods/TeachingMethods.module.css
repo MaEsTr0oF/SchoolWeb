@@ -1,20 +1,22 @@
 .teachingMethods {
   padding: 60px 0;
-  max-width: 1000px;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .title {
-  font-size: 42px;
+  font-size: 50px;
   font-weight: 700;
   margin-bottom: 50px;
   color: #333;
-  text-align: left;
+  text-align: center;
 }
 
 .methodsGrid {
+	width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 40px;
 }
 
@@ -25,16 +27,10 @@
   gap: 10px;
 }
 
-.methodNumber {
-  font-size: 18px;
-  font-weight: 600;
-  color: #888;
-}
-
 .methodContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 100px;
   align-items: center;
 }
 
@@ -45,29 +41,54 @@
 }
 
 .methodTitle {
-  font-size: 24px;
+	
+	font-weight: 500;
+	font-size: 37.08px;
+	
+	line-height: 73.56px;
+	letter-spacing: 0%;
+	position: relative;
+	color:black;
+}
+
+/* Добавляем стиль для отображения номера через псевдоэлемент */
+.methodTitle::before {
+  content: attr(data-number);
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
   font-weight: 600;
-  margin: 0;
-  color: #333;
+  color: #888;
 }
 
 .methodDescription {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #666;
-  margin: 0;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 36.78px;
+	letter-spacing: 0%;
+	color:rgba(0, 0, 0, 0.4);
 }
 
 .methodLink {
-  color: #777;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: inherit;
+  margin-top: 0;
+  margin-left: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  display: inline;
+  vertical-align: baseline;
 }
 
 .methodLink:hover {
-  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .methodImageWrapper {

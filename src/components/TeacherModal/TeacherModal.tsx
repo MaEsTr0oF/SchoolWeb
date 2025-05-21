@@ -1,90 +1,127 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useState } from "react";
 import Image from 'next/image';
 import styles from './TeacherModal.module.css';
 
 interface TeacherModalProps {
-  id: number;
-  name: string;
-  bio: string;
-  imageUrl: string;
   isOpen: boolean;
   onClose: () => void;
+  teacher?: {
+    name: string;
+    rating: number;
+    description: string;
+    image: string;
+    education?: string[];
+    courses?: string[];
+  };
 }
 
-const TeacherModal: React.FC<TeacherModalProps> = ({ id, name, bio, imageUrl, isOpen, onClose }) => {
-  // Предотвращаем прокрутку body при открытом модальном окне
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
+export default function TeacherModal({ isOpen, onClose, teacher }: TeacherModalProps) {
+  const [isEducationOpen, setIsEducationOpen] = useState(false);
+  const [isCoursesOpen, setIsCoursesOpen] = useState(true);
+
+  if (!isOpen || !teacher) return null;
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
     }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
+  };
 
-  // Не рендерим ничего, если модальное окно закрыто
-  if (!isOpen) return null;
+  const toggleEducation = () => {
+    setIsEducationOpen(!isEducationOpen);
+  };
 
-  // Предотвращаем всплытие клика по контенту
-  const handleContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const toggleCourses = () => {
+    setIsCoursesOpen(!isCoursesOpen);
+  };
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <span key={i} className={styles.star}>
+          ★
+        </span>
+      );
+    }
+    return stars;
   };
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={handleContentClick}>
-        <button className={styles.closeButton} onClick={onClose}>×</button>
+    <div className={styles.modalOverlay} onClick={handleOverlayClick}>
+      <div className={styles.modalContent}>
+        <button className={styles.closeButton} onClick={onClose}>
+          &times;
+        </button>
         
-        <div className={styles.header}>
-          <div className={styles.teacherImageWrapper}>
-            <Image 
-              src={imageUrl}
-              alt={name}
-              width={150}
-              height={150}
-              className={styles.teacherImage}
-            />
-          </div>
-          <h2 className={styles.title}>{name}</h2>
-        </div>
-        
-        <div className={styles.content}>
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Опыт преподавателя</h3>
-            <p className={styles.text}>{bio}</p>
+        <div className={styles.teacherProfile}>
+          <div className={styles.teacherPhoto}>
+            <img src={teacher.image} alt={teacher.name} />
           </div>
           
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Образование и квалификация</h3>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>Высшее образование в сфере информационных технологий</li>
-              <li className={styles.listItem}>Сертификаты и дипломы по профильным курсам</li>
-              <li className={styles.listItem}>Участие в профессиональных конференциях и семинарах</li>
-              <li className={styles.listItem}>Постоянное повышение квалификации</li>
-            </ul>
-          </div>
-          
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Преподаваемые курсы</h3>
-            <ul className={styles.coursesList}>
-              <li className={styles.coursesListItem}>Основы веб-разработки</li>
-              <li className={styles.coursesListItem}>HTML, CSS и JavaScript</li>
-              <li className={styles.coursesListItem}>Разработка на ReactJS</li>
-              <li className={styles.coursesListItem}>Современный фронтенд</li>
-            </ul>
+          <div className={styles.teacherInfo}>
+            <h2 className={styles.teacherName}>{teacher.name}</h2>
+            
+            <div className={styles.teacherRating}>
+              <div className={styles.ratingText}>Рейтинг</div>
+              <div className={styles.ratingStars}>
+                {renderStars()}
+                <span className={styles.ratingValue}>{teacher.rating}</span>
+              </div>
+            </div>
+            
+            <p className={styles.teacherDescription}>{teacher.description}</p>
           </div>
         </div>
         
-        <div className={styles.footer}>
-          <button className={styles.contactButton}>Связаться с преподавателем</button>
+        <div className={styles.accordionSection}>
+          <div 
+            className={`${styles.accordionHeader} ${isEducationOpen ? styles.open : ''}`}
+            onClick={toggleEducation}
+          >
+            <span>Образование и квалификация</span>
+            <span className={styles.accordionIcon}>{isEducationOpen ? '-' : '+'}</span>
+          </div>
+          
+          {isEducationOpen && (
+            <div className={styles.accordionContent}>
+              <ul className={styles.educationList}>
+                {teacher.education?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                )) || <p>Информация об образовании отсутствует</p>}
+              </ul>
+            </div>
+          )}
         </div>
+        
+        <div className={styles.accordionSection}>
+          <div 
+            className={`${styles.accordionHeader} ${isCoursesOpen ? styles.open : ''}`}
+            onClick={toggleCourses}
+          >
+            <span>Преподаваемые курсы</span>
+            <span className={styles.accordionIcon}>{isCoursesOpen ? '-' : '+'}</span>
+          </div>
+          
+          {isCoursesOpen && (
+            <div className={`${styles.accordionContent} ${styles.coursesContent}`}>
+              <div className={styles.courseButtonsContainer}>
+                {teacher.courses?.map((course, index) => (
+                  <div key={index} className={styles.courseButton}>
+                    {course}
+                  </div>
+                )) || <p>Информация о курсах отсутствует</p>}
+              </div>
+            </div>
+          )}
+        </div>
+        
+        <button className={styles.contactButton}>
+          Связаться с преподавателем
+        </button>
       </div>
     </div>
   );
-};
-
-export default TeacherModal; 
+} 

@@ -5,9 +5,8 @@
 
 .container {
   width: 100%;
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+
 }
 
 /* Стили для верхней панели */
@@ -29,15 +28,15 @@
 }
 
 .title {
-  color: #000;
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+	font-weight: 600;
+	font-size: 42.85px;
+line-height: 66.06px;
+letter-spacing: 0%;
+color: rgba(0, 0, 0, 1);
 }
 
 .tabsWrapper {
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 .tabContainer {
@@ -74,61 +73,93 @@
 
 /* Стили для карточки */
 .feedbackDetailCard {
-  background-color: #e6f0f2;
-  border-radius: 1rem;
-  overflow: hidden;
-  margin-top: 1rem;
+  border-radius: 20px;
+  overflow: visible;
+  padding: 0;
 }
 
 .feedbackDetailContent {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
 }
 
 .feedbackDetailLeft {
-  padding: 2rem;
-  width: 100%;
+  padding: 40px;
+  width: 65%;
+  background: linear-gradient(84.6deg, #CCDDE2 0%, #D9F1E8 100%);
+
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
 }
 
 .feedbackDetailTitle {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  line-height: 1.3;
 }
 
 .feedbackDetailDescription {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
+
+font-weight: 400;
+font-size: 20.78px;
+color: rgba(0, 0, 0, 0.6);
+
+line-height: 39.64px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+  padding-right: 70px;
+  padding-bottom: 25px;
 }
 
 .feedbackDetailButton {
   display: inline-block;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #34495e;
+  border:1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 10px 20px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
 .feedbackDetailButton:hover {
-  background-color: #555;
-  transform: translateY(-2px);
+  background-color: rgba(0,0,0,0.05);
+  border-color: #95a5a6;
 }
 
 .feedbackDetailRight {
-  width: 100%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 280px;
+  position: relative;
+  left:-80px;
+  top:20px;
 }
 
 .feedbackDetailImage {
-  width: 100%;
-  height: 300px;
+	position: absolute;
+  width: 560px;
+  height: 280px;
+  border-radius: 142.04px;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .feedbackDetailImg {
@@ -137,25 +168,30 @@
   object-fit: cover;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 900px) {
   .feedbackDetailContent {
-    flex-direction: row;
-  }
-  
-  .feedbackDetailLeft {
-    width: 50%;
-    padding: 3rem;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: stretch;
   }
   
+  .feedbackDetailLeft,
   .feedbackDetailRight {
-    width: 50%;
-    height: auto;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
-  
+
+  .feedbackDetailLeft {
+    padding-bottom: 30px;
+  }
+
+  .feedbackDetailRight {
+    padding: 30px 20px;
+  }
+
   .feedbackDetailImage {
-    height: 100%;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
   }
 } 

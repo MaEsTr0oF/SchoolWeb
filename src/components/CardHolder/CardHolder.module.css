@@ -4,9 +4,9 @@
 }
 
 .cardHolder__container {
-  max-width: 1200px; /* Немного уже для более компактного отображения */
+ 
   margin: 0 auto;
-  padding: 0 15px;
+
 }
 
 /* Опциональный заголовок секции */
@@ -30,14 +30,11 @@
 /* Секция с топовыми курсами как на первом фото */
 .topCourses {
   width: 100%;
-  padding: 60px 0;
-  background-color: #f8f9fa;
 }
 
 .topCourses__container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+
 }
 
 .topCourses__title {
@@ -50,90 +47,115 @@
 
 .topCourses__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Оставляем 4 колонки для больших экранов */
   gap: 20px;
   margin-bottom: 30px;
 }
 
 .topCourses__card {
   position: relative;
-
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   background-color: #fff;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none; /* Убираем подчеркивание для ссылки */
-  color: inherit; /* Наследуем цвет */
+  text-decoration: none;
+  color: inherit;
+  height: 350px;
 }
 
 .topCourses__card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* Увеличил сдвиг */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18); /* Усилил тень при наведении */
 }
 
 .topCourses__profession {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px 12px;
+  top: 12px; /* Немного изменил отступ */
+  left: 12px;
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(26.425926208496094px);
+
+  padding: 6px 14px; /* Немного изменил паддинги */
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px; /* Немного уменьшил шрифт */
   font-weight: 500;
-  z-index: 1;
-  color: #555;
+  z-index: 2; /* Убедимся, что поверх изображения */
+  color: #ffffff; /* Белый цвет текста как на макете */
 }
 
 .topCourses__image {
-  position: relative;
-  height: 210px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
+  z-index: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .topCourses__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Изменил анимацию */
 }
 
 .topCourses__card:hover .topCourses__img {
-  transform: scale(1.05);
+  transform: scale(1.08); /* Чуть увеличил масштаб при наведении */
 }
 
 .topCourses__sale {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  rotate: 15deg;
+  top: -15px; /* Пример, можно настроить */
+  right: -45px; /* Пример, можно настроить */
+  width: 80px; /* Размер значка */
+  height: 80px;
+  z-index: 3; /* Выше остальных элементов карточки */
+  transform: rotate(15deg);
 }
 
 .topCourses__info {
-  padding: 15px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 20px 15px 20px; /* Сверху: 25px, Слева/Справа: 20px, Снизу: 15px */
+  z-index: 1;
+  color: #fff;
+  /* Более выраженный градиент: начинается темнее и дольше остается темным */
+  background: linear-gradient(to top, 
+    rgba(0,0,0,0.9) 0%, 
+    rgba(0,0,0,0.85) 50%, /* Основная часть текста будет на этом фоне */
+    rgba(0,0,0,0.6) 75%, 
+    transparent 100%
+  );
+  transform: translateY(0); /* Начальное положение */
+  transition: transform 0.3s ease-out;
+  height: auto; 
+  border-bottom-left-radius: 12px; /* Скругление нижних углов */
+  border-bottom-right-radius: 12px;
+  box-sizing: border-box;
+}
+
+.topCourses__card:hover .topCourses__info {
+  transform: translateY(-10px); /* Уменьшил сдвиг вверх, чтобы был более мягкий эффект */
 }
 
 .topCourses__cardTitle {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 22px; 
+  font-weight: 700; 
+  margin-bottom: 8px; 
+  color: #fff; 
+  line-height: 1.3;
 }
 
 .topCourses__details {
   display: flex;
   font-size: 14px;
-  color: #777;
+  color: rgba(255, 255, 255, 0.85); 
   gap: 8px;
   align-items: center;
 }
@@ -146,7 +168,8 @@
 .topCourses__button {
   background-color: transparent;
   border: none;
-  color: #333;
+  background: rgba(255, 255, 255, 1);
+
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -154,18 +177,22 @@
   align-items: center;
   padding: 10px 25px;
   border-radius: 30px;
-  background-color: #f0f0f0;
-  transition: background-color 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+
+  transition: all 0.3s ease;
 }
 
 .topCourses__button:hover {
-  background-color: #e5e5e5;
+  scale: 1.05;
 }
 
 /* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .topCourses__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Адаптивная сетка для планшетов */
+  }
+  .topCourses__card {
+    height: 320px; /* Уменьшил высоту для планшетов */
   }
 }
 
@@ -183,6 +210,22 @@
   .topCourses__more {
     text-align: center;
   }
+
+  .topCourses__card {
+    height: 300px; /* Еще уменьшил высоту для мобильных */
+  }
+
+  .topCourses__cardTitle {
+    font-size: 20px; /* Уменьшил заголовок на мобильных */
+  }
+
+  .topCourses__details {
+    font-size: 13px; /* Уменьшил детали на мобильных */
+  }
+
+  .topCourses__card:hover .topCourses__info {
+    transform: translateY(-15px); /* Меньший сдвиг на мобильных */
+  }
 }
 
 @media (max-width: 480px) {
@@ -191,7 +234,7 @@
   }
 
   .topCourses__image {
-    height: 180px;
+    /* height: 180px; - убрано, так как карточка имеет фиксированную высоту */
   }
 
   .topCourses__title {

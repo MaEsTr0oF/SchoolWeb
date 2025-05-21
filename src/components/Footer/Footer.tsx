@@ -2,9 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+interface FooterProps {
+  form?: boolean;
+}
+
+export default function Footer({ form = false }: FooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{paddingTop: form ? "0px" : "80px"}}>
       <div className={styles.container}>
         <div className={styles.sections}>
           {/* Курсы - левая колонка */}

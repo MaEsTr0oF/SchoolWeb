@@ -53,20 +53,15 @@ export default function TeachingMethods() {
       <div className={styles.methodsGrid}>
         {/* Метод 1 */}
         <div className={styles.methodItem}>
-          <div className={styles.methodNumber}>
-            {teachingMethodsData[0].number}
-          </div>
           <div className={styles.methodContent}>
             <div className={styles.methodText}>
-              <h3 className={styles.methodTitle}>
+              <h3 className={styles.methodTitle} data-number={teachingMethodsData[0].number}>
                 {teachingMethodsData[0].title}
               </h3>
               <p className={styles.methodDescription}>
-                {teachingMethodsData[0].description}
+                {teachingMethodsData[0].description}{" "}
+                <button className={styles.methodLink}>Подробнее</button>
               </p>
-              <Link href="/teaching-methods" className={styles.methodLink}>
-                Подробнее
-              </Link>
             </div>
             <div className={styles.methodImageWrapper}>
               <img
@@ -80,9 +75,6 @@ export default function TeachingMethods() {
 
         {/* Метод 2 */}
         <div className={styles.methodItem}>
-          <div className={styles.methodNumber}>
-            {teachingMethodsData[1].number}
-          </div>
           <div className={styles.methodContent}>
             <div className={styles.methodImageWrapper}>
               <img
@@ -92,35 +84,28 @@ export default function TeachingMethods() {
               />
             </div>
             <div className={styles.methodText}>
-              <h3 className={styles.methodTitle}>
+              <h3 className={styles.methodTitle} data-number={teachingMethodsData[1].number}>
                 {teachingMethodsData[1].title}
               </h3>
               <p className={styles.methodDescription}>
-                {teachingMethodsData[1].description}
+                {teachingMethodsData[1].description}{" "}
+                <button className={styles.methodLink}>Подробнее</button>
               </p>
-              <Link href="/teaching-methods" className={styles.methodLink}>
-                Подробнее
-              </Link>
             </div>
           </div>
         </div>
 
         {/* Метод 3 */}
         <div className={styles.methodItem}>
-          <div className={styles.methodNumber}>
-            {teachingMethodsData[2].number}
-          </div>
           <div className={styles.methodContent}>
             <div className={styles.methodText}>
-              <h3 className={styles.methodTitle}>
+              <h3 className={styles.methodTitle} data-number={teachingMethodsData[2].number}>
                 {teachingMethodsData[2].title}
               </h3>
               <p className={styles.methodDescription}>
-                {teachingMethodsData[2].description}
+                {teachingMethodsData[2].description}{" "}
+                <button className={styles.methodLink}>Подробнее</button>
               </p>
-              <Link href="/teaching-methods" className={styles.methodLink}>
-                Подробнее
-              </Link>
             </div>
             <div className={styles.methodImageWrapper}>
               <img
@@ -134,9 +119,6 @@ export default function TeachingMethods() {
 
         {/* Метод 4 */}
         <div className={styles.methodItem}>
-          <div className={styles.methodNumber}>
-            {teachingMethodsData[3].number}
-          </div>
           <div className={styles.methodContent}>
             <div className={styles.methodImageWrapper}>
               <img
@@ -146,35 +128,28 @@ export default function TeachingMethods() {
               />
             </div>
             <div className={styles.methodText}>
-              <h3 className={styles.methodTitle}>
+              <h3 className={styles.methodTitle} data-number={teachingMethodsData[3].number}>
                 {teachingMethodsData[3].title}
               </h3>
               <p className={styles.methodDescription}>
-                {teachingMethodsData[3].description}
+                {teachingMethodsData[3].description}{" "}
+                <button className={styles.methodLink}>Подробнее</button>
               </p>
-              <Link href="/teaching-methods" className={styles.methodLink}>
-                Подробнее
-              </Link>
             </div>
           </div>
         </div>
 
         {/* Метод 5 */}
         <div className={styles.methodItem}>
-          <div className={styles.methodNumber}>
-            {teachingMethodsData[4].number}
-          </div>
           <div className={styles.methodContent}>
             <div className={styles.methodText}>
-              <h3 className={styles.methodTitle}>
+              <h3 className={styles.methodTitle} data-number={teachingMethodsData[4].number}>
                 {teachingMethodsData[4].title}
               </h3>
               <p className={styles.methodDescription}>
-                {teachingMethodsData[4].description}
+                {teachingMethodsData[4].description}{" "}
+                <button className={styles.methodLink}>Подробнее</button>
               </p>
-              <Link href="/teaching-methods" className={styles.methodLink}>
-                Подробнее
-              </Link>
             </div>
             <div className={styles.methodImageWrapper}>
               <img

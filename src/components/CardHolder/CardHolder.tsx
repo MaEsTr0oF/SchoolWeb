@@ -110,7 +110,7 @@ const topCoursesData = [
     title: "Программист",
     duration: "9 месяцев",
     salary: "ЗП от 150 тыс.",
-    image: "/images/courses/programmer.png",
+    image: "/images/courses/1.png",
     profession: "Профессия",
     sales: "-50%",
   },
@@ -119,7 +119,7 @@ const topCoursesData = [
     title: "Python разработчик",
     duration: "12 месяцев",
     salary: "ЗП от 100 тыс.",
-    image: "/images/courses/python.png",
+    image: "/images/courses/2.png",
     profession: "Профессия",
     sales: "-50%",
   },
@@ -128,7 +128,7 @@ const topCoursesData = [
     title: "Дизайнер",
     duration: "5 месяцев",
     salary: "ЗП от 80 тыс.",
-    image: "/images/courses/uxui.png",
+    image: "/images/courses/3.png",
     profession: "Профессия",
     sales: "-50%",
   },
@@ -137,7 +137,7 @@ const topCoursesData = [
     title: "Тестировщик",
     duration: "4 месяца",
     salary: "ЗП от 60 тыс.",
-    image: "/images/courses/tester.png",
+    image: "/images/courses/4.png",
     profession: "Профессия",
     sales: "-50%",
   },
@@ -146,7 +146,7 @@ const topCoursesData = [
     title: "3D-дженералист",
     duration: "9 месяцев",
     salary: "ЗП от 150 тыс.",
-    image: "/images/courses/programmer.png", // Временно используем существующее изображение
+    image: "/images/courses/5.png", // Временно используем существующее изображение
     profession: "Профессия",
     sales: "-50%",
   },
@@ -155,7 +155,7 @@ const topCoursesData = [
     title: "Data Scientist",
     duration: "12 месяцев",
     salary: "ЗП от 100 тыс.",
-    image: "/images/courses/python.png", // Временно используем существующее изображение
+    image: "/images/courses/6.png", // Временно используем существующее изображение
     profession: "Профессия",
     sales: "-50%",
   },
@@ -164,7 +164,7 @@ const topCoursesData = [
     title: "Веб-разработчик",
     duration: "5 месяцев",
     salary: "ЗП от 80 тыс.",
-    image: "/images/courses/uxui.png", // Временно используем существующее изображение
+    image: "/images/courses/7.png", // Временно используем существующее изображение
     profession: "Профессия",
     sales: "-50%",
   },
@@ -173,7 +173,7 @@ const topCoursesData = [
     title: "Веб-дизайнер",
     duration: "4 месяца",
     salary: "ЗП от 60 тыс.",
-    image: "/images/courses/tester.png", // Временно используем существующее изображение
+    image: "/images/courses/8.png", // Временно используем существующее изображение
     profession: "Профессия",
     sales: "-50%",
   },
@@ -198,7 +198,13 @@ export default function CardHolder() {
                   {course.profession}
                 </span>
                 <div className={styles.topCourses__image}>
-                  {course.sales && (
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className={styles.topCourses__img}
+                  />
+                </div>
+					 {course.sales && (
                     <div className={styles.topCourses__sale}>
                       <img
                         src="/sales.svg"
@@ -208,12 +214,6 @@ export default function CardHolder() {
                       />
                     </div>
                   )}
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className={styles.topCourses__img}
-                  />
-                </div>
                 <div className={styles.topCourses__info}>
                   <h3 className={styles.topCourses__cardTitle}>
                     {course.title}

@@ -1,327 +1,296 @@
+/* Общие стили секции */
 .sliderSection {
-  padding: 80px 0;
-  background-color: #f8f9fa;
   width: 100%;
-  overflow: hidden;
+  padding: 60px 20px;
+  background-color: #ffffff; /* Белый фон для секции, если нужен */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sliderTitle {
-  text-align: center;
-  font-size: 2.5rem;
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 50px;
-  color: #333;
+  color: #212529; /* Темный цвет для заголовка */
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.sliderContainer {
+/* Контейнер слайдера */
+.sliderOuterContainer {
   position: relative;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+   /* Максимальная ширина для центральной части слайдера */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px 60px;
-  min-height: 350px;
 }
 
-/* Стили для строки с комментариями */
+.sliderViewPort {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .commentsRow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
-  position: relative;
-  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  min-height: 280px;
-  perspective: 1000px;
+  /* transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); Плавный переход для сдвига */
+  /* Динамический transform будет в инлайн-стилях */
 }
 
-/* Анимации слайдера */
-.slide-left {
-  animation: slideLeft 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.slide-right {
-  animation: slideRight 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  40% {
-    transform: translateX(30px);
-    opacity: 0.3;
-  }
-  60% {
-    transform: translateX(-30px);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  40% {
-    transform: translateX(-30px);
-    opacity: 0.3;
-  }
-  60% {
-    transform: translateX(30px);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Общие стили для карточки комментария */
+/* Стили для карточки отзыва */
 .commentCard {
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  position: absolute;
-  overflow: hidden;
-  width: 320px;
-  min-height: 200px;
-  transform-origin: center center;
-}
-
-/* Стили для позиций карточек */
-.leftPosition {
-  transform: translateX(-300px) scale(0.8);
-  opacity: 0.5;
-  z-index: 5;
-}
-
-.centerPosition {
-  transform: translateZ(30px) scale(1.1);
-  z-index: 10;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e6e6e6;
-}
-
-.rightPosition {
-  transform: translateX(300px) scale(0.8);
-  opacity: 0.5;
-  z-index: 5;
-}
-
-/* Стили для заголовка карточки */
-.commentHeader {
+  background-color: rgba(233, 243, 245, 0.85); /* Светло-голубой фон карточки с небольшой прозрачностью */
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start; /* Выравнивание контента по левому краю */
+  transition: all 0.5s ease-in-out;
+  flex: 0 0 auto; /* Чтобы карточки не сжимались и не растягивались */
+  opacity: 0.7;
+  transform: scale(0.85);
+  backdrop-filter: blur(2.642592668533325px);
+  width: 300px; /* Базовая ширина боковой карточки */
+  
+}
+
+.centerCard {
+  background-color: #e9f3f5; /* Непрозрачный фон для центральной */
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+  width: 700px; /* Ширина центральной карточки */
+  max-height: 250px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: none; /* Убираем блюр для центральной */
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start; /* Изменено с center на flex-start */
   margin-bottom: 15px;
+  width: 100%;
 }
 
-/* Контейнер для аватара */
-.avatarWrapper {
-  flex-shrink: 0;
-}
-
-/* Аватар */
-.avatar {
+.avatarContainer {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #f0f0f0;
+  overflow: hidden;
+  margin-right: 15px;
+  flex-shrink: 0;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 
-/* Информация о пользователе */
+.centerCard .avatarContainer {
+  width: 170px; /* Увеличенный аватар для центральной карточки */
+  height: 170px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .userInfo {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .userName {
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 600;
   color: #333;
-  margin: 0 0 2px 0;
+  margin-bottom: 4px;
 }
 
-.courseInfo {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 5px 0 0 0;
+.centerCard .userName {
+  font-size: 20px;
+}
+.userNameAndRating{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	text-wrap: nowrap;
+}
+.ratingContainer {
+  display: flex;
+  margin-bottom: 4px;
 }
 
-/* Текст комментария */
-.commentBody {
-  margin-top: 15px;
+.star {
+  color: #ffc107; /* Желтый для звезд */
+  font-size: 20px;
+  margin-right: 2px;
+}
+
+.courseName {
+  font-size: 13px;
+  color: #555;
+   /* Добавлен отступ снизу */
 }
 
 .commentText {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #555;
-  margin: 0;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+  width: 100%;
+font-size: 21.14px;
+
+line-height: 26.43px;
+letter-spacing: 0%;
+vertical-align: middle;
+padding-top: 13px;
 }
 
-/* Стили для отображения рейтинга звездами */
-.rating {
+.centerCard .commentText {
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 21.14px;
+	leading-trim: Cap height;
+	line-height: 26.43px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	
+}
+
+/* Кнопки навигации */
+.navControls {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.starFilled {
-  color: #ffc107; /* Золотой цвет для заполненных звезд */
-  font-size: 16px;
-  margin-right: 2px;
-}
-
-.starEmpty {
-  color: #e0e0e0; /* Серый цвет для пустых звезд */
-  font-size: 16px;
-  margin-right: 2px;
-}
-
-/* Стили для кнопок навигации */
 .navButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  background-color: #2c3e50; /* Темно-синий фон */
+  border: none;
   border-radius: 50%;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 20;
-  transition: all 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navButton:hover {
-  background-color: #f5f5f5;
-  transform: translateY(-50%) scale(1.1);
+  background-color: #34495e; /* Чуть светлее при наведении */
+  transform: scale(1.05);
 }
 
-.navButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.navButton svg path {
+  stroke: #ffffff; /* Белые стрелки */
+  stroke-width: 2;
 }
 
-.prevButton {
-  left: 10px;
-}
+/* Анимации для сдвига ряда (не используются, если transform на .commentsRow) */
+/* .slide-enter, .slide-exit-active могут быть сложнее в реализации с 3 карточками */
 
-.nextButton {
-  right: 10px;
-}
-
-/* Стили для точек-индикаторов */
-.dotsContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  gap: 10px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.activeDot {
-  background-color: #ffc107;
-  transform: scale(1.2);
-}
-
-/* Медиа-запросы для адаптивности */
+/* Адаптивность */
 @media (max-width: 992px) {
-  .sliderContainer {
-    padding: 20px 50px;
-  }
-
-  .commentsRow {
-    gap: 15px;
-  }
-
-  .leftPosition {
-    transform: translateX(-220px) scale(0.8);
-  }
-
-  .rightPosition {
-    transform: translateX(220px) scale(0.8);
-  }
-
   .commentCard {
-    width: 300px;
+    width: 260px;
+    min-height: 260px;
+    margin: 0 10px;
+  }
+  .centerCard {
+    width: 360px;
+    min-height: 300px;
+  }
+  .sliderTitle {
+    font-size: 28px;
   }
 }
 
 @media (max-width: 768px) {
-  .sliderTitle {
-    font-size: 2rem;
-    margin-bottom: 30px;
+  .sliderOuterContainer {
+    /* Для мобильных устройств одна карточка по центру может быть лучше */
+    /* Либо нужно сильно уменьшать боковые */
   }
-
-  .sliderContainer {
-    padding: 10px 40px;
-  }
-
   .commentCard {
-    width: 260px;
+    width: calc(80vw - 20px); /* Одна карточка на экране */
+    transform: scale(1); /* Без уменьшения */
+    opacity: 1;
+    margin: 0 10px;
+    min-height: auto; /* Автоматическая высота */
   }
-
-  .leftPosition {
-    transform: translateX(-160px) scale(0.7);
-    opacity: 0.4;
+  .centerCard {
+     width: calc(85vw - 20px);
+     min-height: auto;
   }
+  
+  /* На мобильных скрываем боковые карточки или делаем их очень маленькими,
+     либо переходим к показу одной карточки за раз.
+     Текущий подход с тремя карточками на мобильных может быть тесным.
+     Для упрощения, пока оставим логику трех, но они будут одинаковы.
+     Или можно сделать так, чтобы .leftPosition и .rightPosition были display:none
+     а .commentsRow центрировал одну карточку.
+     
+     Для более простого мобильного вида:
+  */
+  .commentsRow {
+    /* Если хотим показывать одну карточку за раз на мобильных */
+    justify-content: center; 
+  }
+  .leftPosition, .rightPosition {
+     /* display: none; */ /* если показывать одну карточку */
+     /* Или сильно уменьшить и сделать почти невидимыми */
+     transform: scale(0.7) translateX(-80px);
+     opacity: 0.4;
+     z-index: 1;
+  }
+   .rightPosition {
+     transform: scale(0.7) translateX(80px);
+   }
 
-  .rightPosition {
-    transform: translateX(160px) scale(0.7);
-    opacity: 0.4;
+  .centerCard .avatarContainer {
+    width: 70px;
+    height: 70px;
+  }
+   .userName {
+    font-size: 17px;
+  }
+  .centerCard .userName {
+    font-size: 18px;
+  }
+  .commentText {
+    font-size: 13px;
+  }
+  .centerCard .commentText {
+    font-size: 14px;
+  }
+  .navButton {
+    width: 40px;
+    height: 40px;
   }
 }
 
-@media (max-width: 576px) {
-  .leftPosition,
-  .rightPosition {
-    display: none; /* Скрываем боковые карточки на мобильных */
+@media (max-width: 480px) {
+  .sliderTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
   }
-
-  .centerPosition {
-    transform: scale(1);
-    width: 280px;
+  .commentCard, .centerCard {
+     width: calc(90vw - 20px); /* Занимает почти всю ширину */
   }
-
-  .commentHeader {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .userInfo {
-    align-items: center;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .sliderContainer {
-    min-height: 300px;
-  }
+   .leftPosition, .rightPosition {
+     /* Если всё еще показываем три, они будут очень маленькими */
+     /* display: none; */ /* Рекомендуется для очень маленьких экранов */
+     transform: scale(0.6) translateX(-100px);
+     opacity: 0.3;
+   }
+   .rightPosition {
+     transform: scale(0.6) translateX(100px);
+   }
 }

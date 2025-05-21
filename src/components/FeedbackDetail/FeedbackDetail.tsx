@@ -16,9 +16,7 @@ export default function FeedbackDetail() {
     <div className={styles.feedbackDetailSection}>
       <div className={styles.container}>
         <div className={styles.headerContainer}>
-          <div className={styles.numberBlock}>
-            <span className={styles.number}>02</span>
-          </div>
+          
           <h2 className={styles.title}>
             Поддерживаем и помогаем<br />
             прийти к результату!
@@ -56,11 +54,12 @@ export default function FeedbackDetail() {
             <div className={styles.feedbackDetailRight}>
               <div className={styles.feedbackDetailImage}>
                 <img 
-                  src="/images/feedback.jpg" 
+                  src="/images/feedback.png" 
                   alt="Примеры обратной связи" 
                   className={styles.feedbackDetailImg}
                   onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/600x400/E6F0F2/333333?text=Обратная+связь";
+                    e.currentTarget.src =
+                      "https://placehold.co/600x400/E6F0F2/333333?text=Обратная+связь";
                   }}
                 />
               </div>
