@@ -8,10 +8,13 @@ import TeacherModal from '../TeacherModal/TeacherModal';
 interface Teacher {
   id: number;
   name: string;
-  bio: string;
+  description: string;
   position: string;
   experience: string;
-  imageUrl: string;
+  image: string;
+  rating: number;
+  education: string[];
+  courses: string[];
 }
 
 // Данные преподавателей
@@ -19,32 +22,69 @@ const teachersData: Teacher[] = [
   {
     id: 1,
     name: 'Антон Курмаев',
-    bio: 'Преподавал информатику в гимназии, ведёт курсы по веб-разработке и программированию, организовывал квесты и круглые столы, а в 22 года занял руководящую должность.',
+    description: 'Преподаватель с 5-летним опытом онлайн-обучения. Специализируюсь на предмет, применяю современные технологии для эффективного обучения.',
     position: 'Преподаватель веб-разработки',
     experience: '5 лет опыта',
-    imageUrl: '/images/teachers/teacher1.jpg',
+    image: '/images/teachers/1.png',
+    rating: 5.0,
+    education: [
+      'Высшее образование в сфере информационных технологий',
+      'Сертификат разработчика Frontend',
+      'Курсы повышения квалификации по методикам обучения'
+    ],
+    courses: [
+      'Графический дизайн',
+      'UX/UI Дизайнер',
+      'Программирование',
+      '3D-дженералист'
+    ]
   },
   {
     id: 2,
     name: 'Елена Смирнова',
-    bio: 'Сертифицированный педагог с опытом преподавания в языковой школе. Специализируется на интерактивных методиках преподавания и индивидуальном подходе к ученикам.',
+    description: 'Преподаватель с 7-летним опытом онлайн-обучения. Специализируюсь на интерактивных методиках преподавания английского языка.',
     position: 'Преподаватель английского',
     experience: '7 лет опыта',
-    imageUrl: '/images/teachers/teacher2.jpg',
+    image: '/images/teachers/teacher2.jpg',
+    rating: 5.0,
+    education: [
+      'Лингвистический университет, факультет иностранных языков',
+      'Сертификат TESOL для преподавания английского',
+      'Курсы по методике интерактивного обучения'
+    ],
+    courses: [
+      'Графический дизайн',
+      'UX/UI Дизайнер',
+      'Программирование',
+      '3D-дженералист'
+    ]
   },
   {
     id: 3,
     name: 'Сергей Иванов',
-    bio: 'Опытный разработчик, работавший в крупных IT-компаниях. Ведет курсы по Python и Data Science, помогает ученикам с трудоустройством в ведущие компании.',
+    description: 'Преподаватель с 8-летним опытом онлайн-обучения. Специализируюсь на Python и Data Science, помогаю ученикам с трудоустройством.',
     position: 'Python-разработчик',
     experience: '8 лет опыта',
-    imageUrl: '/images/teachers/teacher3.jpg',
+    image: '/images/teachers/teacher3.jpg',
+    rating: 5.0,
+    education: [
+      'Магистр компьютерных наук',
+      'Сертифицированный специалист по Data Science',
+      'Курсы по машинному обучению и аналитике данных'
+    ],
+    courses: [
+      'Программирование',
+      'UX/UI Дизайнер',
+      'Графический дизайн',
+      '3D-дженералист'
+    ]
   },
 ];
 
 const TeacherSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -58,7 +98,8 @@ const TeacherSlider: React.FC = () => {
     setCurrentIndex(newIndex);
   };
 
-  const openTeacherModal = () => {
+  const openTeacherModal = (teacher: Teacher) => {
+    setSelectedTeacher(teacher);
     setIsModalOpen(true);
   };
 
@@ -78,14 +119,30 @@ const TeacherSlider: React.FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.teacherSection}>
         <div className={styles.teacherContainer}>
-          <div className={styles.leftBlock}>
-            <div className={styles.teacherCard} onClick={openTeacherModal}>
+          
+          
+          <div className={styles.rightBlock}>
+            <div className={styles.titleBlock}>
+              <h2 className={styles.mainTitle}>
+                Преподаватели на связи <br />
+                и вне уроков!
+              </h2>
+              <p className={styles.description}>
+                Преподаватели и кураторы доступны и вне уроков. 
+                Если возникнут вопросы или сложности, ребенок всегда
+                сможет обратиться за помощью, и мы обязательно поможем
+                решить любую проблему!
+              </p>
+            </div>
+          </div>
+			 <div className={styles.leftBlock}>
+            <div className={styles.teacherCard} onClick={() => openTeacherModal(currentTeacher)}>
               <div className={styles.teacherImageContainer}>
                 <Image 
-                  src={currentTeacher.imageUrl}
+                  src={currentTeacher.image}
                   alt={currentTeacher.name}
-                  width={100}
-                  height={100}
+                  width={120}
+                  height={120}
                   className={styles.teacherImage}
                 />
               </div>
@@ -93,7 +150,7 @@ const TeacherSlider: React.FC = () => {
               <div className={styles.teacherInfo}>
                 <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
                 <div className={styles.statusDot}></div>
-                <p className={styles.teacherBio}>{currentTeacher.bio}</p>
+                <p className={styles.teacherBio}>{currentTeacher.description}</p>
               </div>
               
               <div className={styles.navigationControls}>
@@ -116,33 +173,22 @@ const TeacherSlider: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          <div className={styles.rightBlock}>
-            <div className={styles.titleBlock}>
-              <h2 className={styles.mainTitle}>
-                Преподаватели на связи <span className={styles.number}>01</span><br />
-                и вне уроков!
-              </h2>
-              <p className={styles.description}>
-                Преподаватели и кураторы доступны и вне уроков. 
-                Если возникнут вопросы или сложности, ребенок всегда
-                сможет обратиться за помощью, и мы обязательно поможем
-                решить любую проблему!
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-      
-      {/* Модальное окно с информацией о преподавателе */}
-      <TeacherModal
-        id={currentTeacher.id}
-        name={currentTeacher.name}
-        bio={currentTeacher.bio}
-        imageUrl={currentTeacher.imageUrl}
-        isOpen={isModalOpen}
-        onClose={closeTeacherModal}
-      />
+      {selectedTeacher && (
+        <TeacherModal
+          isOpen={isModalOpen}
+          onClose={closeTeacherModal}
+          teacher={{
+            name: selectedTeacher.name,
+            rating: selectedTeacher.rating,
+            description: selectedTeacher.description,
+            image: selectedTeacher.image,
+            education: selectedTeacher.education,
+            courses: selectedTeacher.courses
+          }}
+        />
+      )}
     </div>
   );
 };

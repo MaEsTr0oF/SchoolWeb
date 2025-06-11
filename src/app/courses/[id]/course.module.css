@@ -240,61 +240,93 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  position: relative;
+  overflow: hidden;
+  height: 320px;
 }
 
 .relatedCourseCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.relatedCourseProfession {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(26.425926208496094px);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 2;
+  color: #ffffff;
 }
 
 .relatedCourseImage {
-  position: relative;
-  height: 180px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
+  z-index: 0;
 }
 
-.relatedCourseImage img {
+.relatedCourseImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.relatedCourseCard:hover .relatedCourseImage img {
-  transform: scale(1.05);
+.relatedCourseCard:hover .relatedCourseImg {
+  transform: scale(1.08);
 }
 
 .relatedCourseSale {
   position: absolute;
-  top: -25px;
-  right: -10px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  rotate: 15deg;
+  top: -15px;
+  right: -45px;
+  z-index: 3;
+  transform: rotate(15deg);
 }
-.relatedCourseSale img {
-  width: 80px;
-  height: 80px;
-}
+
 .relatedCourseInfo {
-  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.relatedCourseInfo:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: -1;
 }
 
 .relatedCourseTitle {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.2;
+  color: #fff;
 }
 
 .relatedCourseDetails {
   display: flex;
-  font-size: 14px;
-  color: #777;
   gap: 8px;
   align-items: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Страница ошибки "Курс не найден" */

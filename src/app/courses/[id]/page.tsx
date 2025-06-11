@@ -24,7 +24,7 @@ const coursesData = [
     teacher: {
       name: "Иван Карпов",
       rating: 4.96,
-      image: "/teacher.jpg",
+      image: "/images/teachers/2.png",
     },
     skills: [
       "Основы алгоритмизации",
@@ -49,7 +49,7 @@ const coursesData = [
     teacher: {
       name: "Анна Петрова",
       rating: 4.85,
-      image: "/teacher.jpg",
+      image: "/images/teachers/1.png",
     },
     skills: ["Python", "Django", "Flask", "БД SQL", "ООП"],
   },
@@ -68,7 +68,7 @@ const coursesData = [
     teacher: {
       name: "Мария Сидорова",
       rating: 4.92,
-      image: "/teacher.jpg",
+      image: "/images/teachers/1.png",
     },
     skills: [
       "Figma",
@@ -93,7 +93,7 @@ const coursesData = [
     teacher: {
       name: "Алексей Смирнов",
       rating: 4.87,
-      image: "/teacher.jpg",
+      image: "/images/teachers/1.png",
     },
     skills: [
       "Ручное тестирование",
@@ -118,7 +118,7 @@ const coursesData = [
     teacher: {
       name: "Дмитрий Волков",
       rating: 4.9,
-      image: "/teacher.jpg",
+      image: "/images/teachers/3.png",
     },
     skills: ["Blender", "Maya", "Моделирование", "Текстурирование", "Анимация"],
   },
@@ -137,7 +137,7 @@ const coursesData = [
     teacher: {
       name: "Елена Козлова",
       rating: 4.95,
-      image: "/teacher.jpg",
+      image: "/images/teachers/4.png",
     },
     skills: [
       "Python",
@@ -162,7 +162,7 @@ const coursesData = [
     teacher: {
       name: "Сергей Николаев",
       rating: 4.88,
-      image: "/teacher.jpg",
+      image: "/images/teachers/3.png",
     },
     skills: ["HTML, CSS", "JavaScript", "React", "Node.js", "API"],
   },
@@ -181,7 +181,7 @@ const coursesData = [
     teacher: {
       name: "Иван Карпов",
       rating: 4.96,
-      image: "/teacher.jpg",
+      image: "/images/teachers/2.png",
     },
     skills: ["Adobe XD", "Figma", "Sketch", "HTML и CSS", "UI/UX основы"],
   },
@@ -218,11 +218,7 @@ export default function CourseDetail() {
       <Header />
       <main className={styles.coursePage}>
         <div className={styles.container}>
-          {/* Хлебные крошки */}
-          <div className={styles.breadcrumbs}>
-            <Link href="/">Главная</Link> / <Link href="/courses">Курсы</Link> /{" "}
-            <span>{course.title}</span>
-          </div>
+          
 
           {/* Основная информация о курсе */}
           <div className={styles.courseHeader}>
@@ -297,18 +293,22 @@ export default function CourseDetail() {
                     href={`/courses/${relatedCourse.id}`}
                     className={styles.relatedCourseCard}
                   >
+                    <span className={styles.relatedCourseProfession}>
+                      {relatedCourse.profession}
+                    </span>
                     <div className={styles.relatedCourseImage}>
                       <img
                         src={relatedCourse.image}
                         alt={relatedCourse.title}
+                        className={styles.relatedCourseImg}
                       />
                       {relatedCourse.sales && (
                         <div className={styles.relatedCourseSale}>
                           <img
                             src="/sales.svg"
                             alt="Скидка"
-                            width={20}
-                            height={20}
+                            width={45}
+                            height={45}
                           />
                         </div>
                       )}

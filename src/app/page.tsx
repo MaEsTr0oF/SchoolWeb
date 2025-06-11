@@ -4,25 +4,28 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import CardHolder from "../components/CardHolder/CardHolder";
 import TeacherSlider from "../components/TeacherSlider/TeacherSlider";
 import CommentSlider from "../components/CommentSlider/CommentSlider";
-import Benefits from "../components/Benefits/Benefits";
 import FeedbackDetail from "../components/FeedbackDetail/FeedbackDetail";
 import ContactForm from "../components/ContactForm/ContactForm";
+import Collaboration from "../components/Collaboration/Collaboration";
 import Footer from "../components/Footer/Footer";
-import TeachingMethods from "../components/TeachingMethods/TeachingMethods";
+import MainLayout from "../components/Layout/MainLayout";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Dashbord />
-      <AboutUs />
-      <CardHolder />
-      <TeachingMethods />
-      <TeacherSlider />
-      <FeedbackDetail />
-      <CommentSlider />
-      <ContactForm />
-      <Footer />
+      <MainLayout>
+        <Dashbord />
+        <AboutUs />
+        <CardHolder />
+        {/* <TeachingMethods /> */}
+        <TeacherSlider />
+        <FeedbackDetail />
+        <CommentSlider />
+        <Collaboration />
+        <ContactForm />
+      </MainLayout>
+      <Footer form={false} />
     </div>
   );
 }
