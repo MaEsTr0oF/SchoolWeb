@@ -107,75 +107,39 @@ const coursesData = [
 const topCoursesData = [
   {
     id: 1,
-    title: "Программист",
+    title: "Python",
     duration: "9 месяцев",
     salary: "ЗП от 150 тыс.",
-    image: "/images/courses/programmer.png",
+    image: "/images/courses/python.png",
     profession: "Профессия",
-    sales: "-50%",
+    sales: "",
   },
   {
     id: 2,
-    title: "Python разработчик",
-    duration: "12 месяцев",
-    salary: "ЗП от 100 тыс.",
-    image: "/images/courses/python.png",
-    profession: "Профессия",
-    sales: "-50%",
+    title: "Roblox",
+    duration: "6 месяцев",
+    salary: "Создание игр",
+    image: "/images/courses/roblox.png",
+    profession: "Курс",
+    sales: "",
   },
   {
     id: 3,
-    title: "Дизайнер",
-    duration: "5 месяцев",
-    salary: "ЗП от 80 тыс.",
-    image: "/images/courses/uxui.png",
-    profession: "Профессия",
-    sales: "-50%",
+    title: "Scratch",
+    duration: "4 месяца",
+    salary: "Основы программирования",
+    image: "/images/courses/scratch.png",
+    profession: "Курс",
+    sales: "",
   },
   {
     id: 4,
-    title: "Тестировщик",
-    duration: "4 месяца",
-    salary: "ЗП от 60 тыс.",
-    image: "/images/courses/tester.png",
-    profession: "Профессия",
-    sales: "-50%",
-  },
-  {
-    id: 5,
-    title: "3D-дженералист",
-    duration: "9 месяцев",
-    salary: "ЗП от 150 тыс.",
-    image: "/images/courses/programmer.png", // Временно используем существующее изображение
-    profession: "Профессия",
-    sales: "-50%",
-  },
-  {
-    id: 6,
-    title: "Data Scientist",
-    duration: "12 месяцев",
-    salary: "ЗП от 100 тыс.",
-    image: "/images/courses/python.png", // Временно используем существующее изображение
-    profession: "Профессия",
-    sales: "-50%",
-  },
-  {
-    id: 7,
-    title: "Веб-разработчик",
+    title: "Minecraft",
     duration: "5 месяцев",
-    salary: "ЗП от 80 тыс.",
-    image: "/images/courses/uxui.png", // Временно используем существующее изображение
-    profession: "Профессия",
-    sales: "-50%",
-  },
-  {
-    id: 8,
-    title: "Веб-дизайнер",
-    duration: "4 месяца",
-    salary: "ЗП от 60 тыс.",
-    image: "/images/courses/tester.png", // Временно используем существующее изображение
-    profession: "Профессия",
-    sales: "-50%",
+    salary: "Программирование в игре",
+    image: "/images/courses/minecraft.png",
+    profession: "Курс",
+    sales: "",
   },
 ];
 
@@ -198,21 +162,12 @@ export default function CardHolder() {
                   {course.profession}
                 </span>
                 <div className={styles.topCourses__image}>
-                  {course.sales && (
-                    <div className={styles.topCourses__sale}>
-                      <img
-                        src="/sales.svg"
-                        alt="Скидка"
-                        width={45}
-                        height={45}
-                      />
-                    </div>
-                  )}
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className={styles.topCourses__img}
-                  />
+                  <div className={styles.topCourses__emoji}>
+                    {course.id === 1 && "🐍"}
+                    {course.id === 2 && "🎮"}
+                    {course.id === 3 && "🎨"}
+                    {course.id === 4 && "⛏️"}
+                  </div>
                 </div>
                 <div className={styles.topCourses__info}>
                   <h3 className={styles.topCourses__cardTitle}>
@@ -231,6 +186,42 @@ export default function CardHolder() {
             <Link href="/courses" className={styles.topCourses__button}>
               Больше курсов →
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Векторы развития */}
+      <div className={styles.developmentVectors}>
+        <div className={styles.developmentVectors__container}>
+          <h2 className={styles.developmentVectors__title}>
+            Векторы развития наших учеников
+          </h2>
+          <div className={styles.developmentVectors__list}>
+            <div className={styles.developmentVectors__item}>
+              <div className={styles.developmentVectors__icon}>🐍</div>
+              <h3>Python</h3>
+              <p>Изучение основ программирования и создание первых проектов</p>
+            </div>
+            <div className={styles.developmentVectors__item}>
+              <div className={styles.developmentVectors__icon}>🎮</div>
+              <h3>Roblox</h3>
+              <p>Создание собственных игр и развитие творческого мышления</p>
+            </div>
+            <div className={styles.developmentVectors__item}>
+              <div className={styles.developmentVectors__icon}>🎨</div>
+              <h3>Scratch</h3>
+              <p>
+                Основы алгоритмического мышления через визуальное
+                программирование
+              </p>
+            </div>
+            <div className={styles.developmentVectors__item}>
+              <div className={styles.developmentVectors__icon}>⛏️</div>
+              <h3>Minecraft</h3>
+              <p>
+                Программирование в любимой игре и изучение логических структур
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -50,14 +50,13 @@
 
 .topCourses__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
   margin-bottom: 30px;
 }
 
 .topCourses__card {
   position: relative;
-
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -91,28 +90,39 @@
   position: relative;
   height: 210px;
   width: 100%;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
 }
 
-.topCourses__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+/* Специальные фоны для каждого курса */
+.topCourses__card:nth-child(1) .topCourses__image {
+  background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
 }
 
-.topCourses__card:hover .topCourses__img {
-  transform: scale(1.05);
+.topCourses__card:nth-child(2) .topCourses__image {
+  background: linear-gradient(135deg, #e74c3c 0%, #ff6b35 100%);
 }
 
-.topCourses__sale {
+.topCourses__card:nth-child(3) .topCourses__image {
+  background: linear-gradient(135deg, #ff7900 0%, #ffb347 100%);
+}
+
+.topCourses__card:nth-child(4) .topCourses__image {
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+}
+
+.topCourses__emoji {
+  font-size: 80px;
   position: absolute;
-  top: -15px;
-  right: -15px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  rotate: 15deg;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.topCourses__card:hover .topCourses__emoji {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .topCourses__info {
@@ -162,17 +172,82 @@
   background-color: #e5e5e5;
 }
 
+/* Векторы развития */
+.developmentVectors {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.developmentVectors__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.developmentVectors__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #333;
+}
+
+.developmentVectors__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.developmentVectors__item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developmentVectors__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.developmentVectors__icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.developmentVectors__item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.developmentVectors__item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
 /* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .topCourses__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .developmentVectors__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 }
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
   .topCourses__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .topCourses__title {
@@ -182,6 +257,19 @@
 
   .topCourses__more {
     text-align: center;
+  }
+
+  .developmentVectors__list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .developmentVectors__title {
+    font-size: 28px;
+  }
+
+  .developmentVectors__item {
+    padding: 25px 15px;
   }
 }
 
@@ -196,5 +284,24 @@
 
   .topCourses__title {
     font-size: 24px;
+  }
+
+  .developmentVectors {
+    padding: 60px 0;
+  }
+
+  .developmentVectors__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .developmentVectors__icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .developmentVectors__item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }

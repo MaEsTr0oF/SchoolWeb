@@ -7,6 +7,40 @@
   overflow: hidden;
 }
 
+.dashbord::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%23e0e7ff' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-8.837-7.163-16-16-16S-12 11.163-12 20s7.163 16 16 16 16-7.163 16-16zM0 0c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8z'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%2343c59e' fill-opacity='0.1'%3E%3Cpolygon points='30,10 50,50 10,50'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cg fill='%23fbbf24' fill-opacity='0.15'%3E%3Crect x='10' y='10' width='30' height='30' rx='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: 100px 150px, 800px 300px, 200px 450px, 600px 100px,
+    1000px 400px;
+  background-repeat: no-repeat;
+  background-size: 40px 40px, 60px 60px, 50px 50px;
+  animation: float 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
 .dashbord__container {
   max-width: 1200px;
   margin: 0 auto;
