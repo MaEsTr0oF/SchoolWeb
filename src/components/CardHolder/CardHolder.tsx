@@ -189,42 +189,6 @@ export default function CardHolder() {
           </div>
         </div>
       </div>
-
-      {/* Векторы развития */}
-      <div className={styles.developmentVectors}>
-        <div className={styles.developmentVectors__container}>
-          <h2 className={styles.developmentVectors__title}>
-            Векторы развития наших учеников
-          </h2>
-          <div className={styles.developmentVectors__list}>
-            <div className={styles.developmentVectors__item}>
-              <div className={styles.developmentVectors__icon}>🐍</div>
-              <h3>Python</h3>
-              <p>Изучение основ программирования и создание первых проектов</p>
-            </div>
-            <div className={styles.developmentVectors__item}>
-              <div className={styles.developmentVectors__icon}>🎮</div>
-              <h3>Roblox</h3>
-              <p>Создание собственных игр и развитие творческого мышления</p>
-            </div>
-            <div className={styles.developmentVectors__item}>
-              <div className={styles.developmentVectors__icon}>🎨</div>
-              <h3>Scratch</h3>
-              <p>
-                Основы алгоритмического мышления через визуальное
-                программирование
-              </p>
-            </div>
-            <div className={styles.developmentVectors__item}>
-              <div className={styles.developmentVectors__icon}>⛏️</div>
-              <h3>Minecraft</h3>
-              <p>
-                Программирование в любимой игре и изучение логических структур
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

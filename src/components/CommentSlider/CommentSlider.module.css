@@ -1,7 +1,7 @@
 /* Общие стили секции */
 .sliderSection {
   width: 100%;
-  padding: 60px 20px;
+  padding: 0;
   background-color: #ffffff; /* Белый фон для секции, если нужен */
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 .sliderOuterContainer {
   position: relative;
   width: 100%;
-   /* Максимальная ширина для центральной части слайдера */
+  /* Максимальная ширина для центральной части слайдера */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +42,12 @@
 
 /* Стили для карточки отзыва */
 .commentCard {
-  background-color: rgba(233, 243, 245, 0.85); /* Светло-голубой фон карточки с небольшой прозрачностью */
+  background-color: rgba(
+    233,
+    243,
+    245,
+    0.85
+  ); /* Светло-голубой фон карточки с небольшой прозрачностью */
   border-radius: 16px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -56,7 +61,6 @@
   transform: scale(0.85);
   backdrop-filter: blur(2.642592668533325px);
   width: 300px; /* Базовая ширина боковой карточки */
-  
 }
 
 .centerCard {
@@ -114,12 +118,12 @@
 .centerCard .userName {
   font-size: 20px;
 }
-.userNameAndRating{
-	display: flex;
-	gap: 10px;
-	align-items: center;
-	justify-content: center;
-	text-wrap: nowrap;
+.userNameAndRating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
 }
 .ratingContainer {
   display: flex;
@@ -135,7 +139,7 @@
 .courseName {
   font-size: 13px;
   color: #555;
-   /* Добавлен отступ снизу */
+  /* Добавлен отступ снизу */
 }
 
 .commentText {
@@ -143,23 +147,22 @@
   color: rgba(0, 0, 0, 0.6);
   text-align: left;
   width: 100%;
-font-size: 21.14px;
+  font-size: 21.14px;
 
-line-height: 26.43px;
-letter-spacing: 0%;
-vertical-align: middle;
-padding-top: 13px;
+  line-height: 26.43px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  padding-top: 13px;
 }
 
 .centerCard .commentText {
-	font-family: Montserrat;
-	font-weight: 400;
-	font-size: 21.14px;
-	leading-trim: Cap height;
-	line-height: 26.43px;
-	letter-spacing: 0%;
-	vertical-align: middle;
-	
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 21.14px;
+  leading-trim: Cap height;
+  line-height: 26.43px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 /* Кнопки навигации */
@@ -226,10 +229,10 @@ padding-top: 13px;
     min-height: auto; /* Автоматическая высота */
   }
   .centerCard {
-     width: calc(85vw - 20px);
-     min-height: auto;
+    width: calc(85vw - 20px);
+    min-height: auto;
   }
-  
+
   /* На мобильных скрываем боковые карточки или делаем их очень маленькими,
      либо переходим к показу одной карточки за раз.
      Текущий подход с тремя карточками на мобильных может быть тесным.
@@ -241,24 +244,25 @@ padding-top: 13px;
   */
   .commentsRow {
     /* Если хотим показывать одну карточку за раз на мобильных */
-    justify-content: center; 
+    justify-content: center;
   }
-  .leftPosition, .rightPosition {
-     /* display: none; */ /* если показывать одну карточку */
-     /* Или сильно уменьшить и сделать почти невидимыми */
-     transform: scale(0.7) translateX(-80px);
-     opacity: 0.4;
-     z-index: 1;
+  .leftPosition,
+  .rightPosition {
+    /* display: none; */ /* если показывать одну карточку */
+    /* Или сильно уменьшить и сделать почти невидимыми */
+    transform: scale(0.7) translateX(-80px);
+    opacity: 0.4;
+    z-index: 1;
   }
-   .rightPosition {
-     transform: scale(0.7) translateX(80px);
-   }
+  .rightPosition {
+    transform: scale(0.7) translateX(80px);
+  }
 
   .centerCard .avatarContainer {
     width: 70px;
     height: 70px;
   }
-   .userName {
+  .userName {
     font-size: 17px;
   }
   .centerCard .userName {
@@ -281,16 +285,18 @@ padding-top: 13px;
     font-size: 24px;
     margin-bottom: 25px;
   }
-  .commentCard, .centerCard {
-     width: calc(90vw - 20px); /* Занимает почти всю ширину */
+  .commentCard,
+  .centerCard {
+    width: calc(90vw - 20px); /* Занимает почти всю ширину */
   }
-   .leftPosition, .rightPosition {
-     /* Если всё еще показываем три, они будут очень маленькими */
-     /* display: none; */ /* Рекомендуется для очень маленьких экранов */
-     transform: scale(0.6) translateX(-100px);
-     opacity: 0.3;
-   }
-   .rightPosition {
-     transform: scale(0.6) translateX(100px);
-   }
+  .leftPosition,
+  .rightPosition {
+    /* Если всё еще показываем три, они будут очень маленькими */
+    /* display: none; */ /* Рекомендуется для очень маленьких экранов */
+    transform: scale(0.6) translateX(-100px);
+    opacity: 0.3;
+  }
+  .rightPosition {
+    transform: scale(0.6) translateX(100px);
+  }
 }

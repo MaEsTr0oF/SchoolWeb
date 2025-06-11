@@ -4,9 +4,7 @@
 }
 
 .cardHolder__container {
- 
   margin: 0 auto;
-
 }
 
 /* Опциональный заголовок секции */
@@ -34,7 +32,6 @@
 
 .topCourses__container {
   margin: 0 auto;
-
 }
 
 .topCourses__title {
@@ -47,25 +44,15 @@
 
 .topCourses__grid {
   display: grid;
-<<<<<<< HEAD
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-=======
-  grid-template-columns: repeat(4, 1fr); /* Оставляем 4 колонки для больших экранов */
-  gap: 20px;
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
   margin-bottom: 30px;
 }
 
 .topCourses__card {
   position: relative;
-<<<<<<< HEAD
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-=======
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -101,7 +88,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-<<<<<<< HEAD
   border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
@@ -113,22 +99,6 @@
 
 .topCourses__card:nth-child(2) .topCourses__image {
   background: linear-gradient(135deg, #e74c3c 0%, #ff6b35 100%);
-=======
-  z-index: 0;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.topCourses__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Изменил анимацию */
-}
-
-.topCourses__card:hover .topCourses__img {
-  transform: scale(1.08); /* Чуть увеличил масштаб при наведении */
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
 }
 
 .topCourses__card:nth-child(3) .topCourses__image {
@@ -142,7 +112,6 @@
 .topCourses__emoji {
   font-size: 80px;
   position: absolute;
-<<<<<<< HEAD
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -152,14 +121,6 @@
 
 .topCourses__card:hover .topCourses__emoji {
   transform: translate(-50%, -50%) scale(1.1);
-=======
-  top: -15px; /* Пример, можно настроить */
-  right: -45px; /* Пример, можно настроить */
-  width: 80px; /* Размер значка */
-  height: 80px;
-  z-index: 3; /* Выше остальных элементов карточки */
-  transform: rotate(15deg);
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
 }
 
 .topCourses__info {
@@ -171,36 +132,39 @@
   z-index: 1;
   color: #fff;
   /* Более выраженный градиент: начинается темнее и дольше остается темным */
-  background: linear-gradient(to top, 
-    rgba(0,0,0,0.9) 0%, 
-    rgba(0,0,0,0.85) 50%, /* Основная часть текста будет на этом фоне */
-    rgba(0,0,0,0.6) 75%, 
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.85) 50%,
+    /* Основная часть текста будет на этом фоне */ rgba(0, 0, 0, 0.6) 75%,
     transparent 100%
   );
   transform: translateY(0); /* Начальное положение */
   transition: transform 0.3s ease-out;
-  height: auto; 
+  height: auto;
   border-bottom-left-radius: 12px; /* Скругление нижних углов */
   border-bottom-right-radius: 12px;
   box-sizing: border-box;
 }
 
 .topCourses__card:hover .topCourses__info {
-  transform: translateY(-10px); /* Уменьшил сдвиг вверх, чтобы был более мягкий эффект */
+  transform: translateY(
+    -10px
+  ); /* Уменьшил сдвиг вверх, чтобы был более мягкий эффект */
 }
 
 .topCourses__cardTitle {
-  font-size: 22px; 
-  font-weight: 700; 
-  margin-bottom: 8px; 
-  color: #fff; 
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
   line-height: 1.3;
 }
 
 .topCourses__details {
   display: flex;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.85); 
+  color: rgba(255, 255, 255, 0.85);
   gap: 8px;
   align-items: center;
 }
@@ -292,7 +256,6 @@
 /* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .topCourses__grid {
-<<<<<<< HEAD
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
@@ -300,12 +263,6 @@
   .developmentVectors__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-=======
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Адаптивная сетка для планшетов */
-  }
-  .topCourses__card {
-    height: 320px; /* Уменьшил высоту для планшетов */
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
   }
 }
 
@@ -325,7 +282,6 @@
     text-align: center;
   }
 
-<<<<<<< HEAD
   .developmentVectors__list {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -337,22 +293,6 @@
 
   .developmentVectors__item {
     padding: 25px 15px;
-=======
-  .topCourses__card {
-    height: 300px; /* Еще уменьшил высоту для мобильных */
-  }
-
-  .topCourses__cardTitle {
-    font-size: 20px; /* Уменьшил заголовок на мобильных */
-  }
-
-  .topCourses__details {
-    font-size: 13px; /* Уменьшил детали на мобильных */
-  }
-
-  .topCourses__card:hover .topCourses__info {
-    transform: translateY(-15px); /* Меньший сдвиг на мобильных */
->>>>>>> 39b300a6e8798387ee3e4f8555b31ea3f7711db6
   }
 }
 

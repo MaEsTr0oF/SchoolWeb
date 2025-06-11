@@ -16,11 +16,11 @@ export default function Dashbord() {
         <div className={styles.dashbord__content}>
           <div className={styles.dashbord__textBlock}>
             <h1 className={styles.dashbord__title}>
-              Учитесь
+              Изучайте
               <br />
               Создавайте
               <br />
-              Кодируйте будущее!
+              Кодируйте будущее своего ребёнка!
             </h1>
             <p className={styles.dashbord__subtitle}>
               Овладейте навыками, которые изменят ваш мир.
@@ -36,13 +36,19 @@ export default function Dashbord() {
 
             <div className={styles.dashbord__students}>
               <div className={styles.dashbord__avatars}>
-                <div className={styles.dashbord__avatar}><img src="/images/avatar1.png" alt="Аватар" /></div>
-                <div className={styles.dashbord__avatar}><img src="/images/avatar2.png" alt="Аватар" /></div>
-                <div className={styles.dashbord__avatar}><img src="/images/avatar3.png" alt="Аватар" /></div>
+                <div className={styles.dashbord__avatar}>
+                  <img src="/images/avatar1.png" alt="Аватар" />
+                </div>
+                <div className={styles.dashbord__avatar}>
+                  <img src="/images/avatar2.png" alt="Аватар" />
+                </div>
+                <div className={styles.dashbord__avatar}>
+                  <img src="/images/avatar3.png" alt="Аватар" />
+                </div>
               </div>
-              <p className={styles.dashbord__studentsText}>
+              {/* <p className={styles.dashbord__studentsText}>
                 100+ выпустившихся учеников!
-              </p>
+              </p> */}
             </div>
           </div>
 

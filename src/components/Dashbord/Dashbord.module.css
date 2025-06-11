@@ -41,9 +41,7 @@
 }
 
 .dashbord__container {
-  
   margin: 0 auto;
-  
 }
 
 .dashbord__content {
@@ -82,7 +80,7 @@
 
 .dashbord__primaryButton {
   padding: 12px 24px;
-  background: linear-gradient(257.25deg, #0092CC 0%, #51C791 99.29%);
+  background: linear-gradient(257.25deg, #0092cc 0%, #51c791 99.29%);
 
   color: white;
   border: none;

@@ -118,8 +118,40 @@
 .courseImageContainer {
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
+/* Специальные фоны для каждого курса в заголовке */
+.course1 .courseEmojiContainer {
+  background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+}
+
+.course2 .courseEmojiContainer {
+  background: linear-gradient(135deg, #e74c3c 0%, #ff6b35 100%);
+}
+
+.course3 .courseEmojiContainer {
+  background: linear-gradient(135deg, #ff7900 0%, #ffb347 100%);
+}
+
+.course4 .courseEmojiContainer {
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+}
+
+.courseEmojiContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.courseEmoji {
+  font-size: 120px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Удаляем старые стили изображений */
 .courseImage {
   width: 100%;
   height: 100%;
@@ -265,12 +297,47 @@
 }
 
 .relatedCourseImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  position: relative;
+  height: 200px;
   width: 100%;
-  z-index: 0;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.relatedCourseEmojiContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.relatedCourseEmoji {
+  font-size: 60px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.relatedCourseCard:hover .relatedCourseEmoji {
+  transform: scale(1.1);
+}
+
+/* Специальные фоны для каждого курса в похожих курсах */
+.relatedCourseCard:nth-child(1) .relatedCourseEmojiContainer {
+  background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+}
+
+.relatedCourseCard:nth-child(2) .relatedCourseEmojiContainer {
+  background: linear-gradient(135deg, #e74c3c 0%, #ff6b35 100%);
+}
+
+.relatedCourseCard:nth-child(3) .relatedCourseEmojiContainer {
+  background: linear-gradient(135deg, #ff7900 0%, #ffb347 100%);
+}
+
+.relatedCourseCard:nth-child(4) .relatedCourseEmojiContainer {
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
 }
 
 .relatedCourseImg {
@@ -288,6 +355,8 @@
   position: absolute;
   top: -15px;
   right: -45px;
+  width: 80px;
+  height: 80px;
   z-index: 3;
   transform: rotate(15deg);
 }
@@ -303,7 +372,7 @@
 }
 
 .relatedCourseInfo:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;

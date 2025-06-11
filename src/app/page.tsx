@@ -9,10 +9,12 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import Collaboration from "../components/Collaboration/Collaboration";
 import Footer from "../components/Footer/Footer";
 import MainLayout from "../components/Layout/MainLayout";
+import BackgroundDecorations from "../components/BackgroundDecorations/BackgroundDecorations";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
+      <BackgroundDecorations />
       <Header />
       <MainLayout>
         <Dashbord />

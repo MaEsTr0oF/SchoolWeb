@@ -2,20 +2,16 @@
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import CoursesContent from "@/components/CoursesContent/CoursesContent";
-import MainLayout from "@/components/Layout/MainLayout";
-
-
-
+import CoursesContent from "../../components/CoursesContent/CoursesContent";
+import BackgroundDecorations from "../../components/BackgroundDecorations/BackgroundDecorations";
 
 export default function Courses() {
   return (
-    <>
-	 <Header />
-	 	<MainLayout>
-			<CoursesContent />
-	 	</MainLayout>
-		 <Footer form={true} />
-    </>
+    <div style={{ position: "relative" }}>
+      <BackgroundDecorations />
+      <Header />
+      <CoursesContent />
+      <Footer form={true} />
+    </div>
   );
 }
