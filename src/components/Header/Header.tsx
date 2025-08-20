@@ -55,13 +55,13 @@ export default function Header() {
         </div>
         <div className={styles.header__buttons}>
           <button
-            className={`${styles.header__button} ${styles["header__button--signup"]}`}
+            className={`font-nekstmedium ${styles.header__button} ${styles["header__button--signup"]}`}
             onClick={openRegistrationModal}
           >
             Записаться
           </button>
           <button
-            className={`${styles.header__button} ${styles["header__button--contact"]}`}
+            className={`font-nekstmedium ${styles.header__button} ${styles["header__button--contact"]}`}
             onClick={openApplicationModal}
           >
             Оставить заявку

@@ -110,6 +110,7 @@
 }
 
 .userName {
+  font-family: "Nekst-Medium";
   font-size: 18px;
   font-weight: 600;
   color: #333;
@@ -139,11 +140,13 @@
 
 .courseName {
   font-size: 13px;
+  font-family: "Nekst-Medium";
   color: #555;
   /* Добавлен отступ снизу */
 }
 
 .commentText {
+  font-family: "Nekst-Regular";
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.6);
   text-align: left;

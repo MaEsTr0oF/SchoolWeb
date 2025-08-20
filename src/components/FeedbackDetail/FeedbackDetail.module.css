@@ -6,7 +6,6 @@
 .container {
   width: 100%;
   margin: 0 auto;
-
 }
 
 /* Стили для верхней панели */
@@ -28,11 +27,11 @@
 }
 
 .title {
-	font-weight: 600;
-	font-size: 42.85px;
-line-height: 66.06px;
-letter-spacing: 0%;
-color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+  font-size: 42.85px;
+  line-height: 66.06px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
 }
 
 .tabsWrapper {
@@ -88,7 +87,7 @@ color: rgba(0, 0, 0, 1);
 .feedbackDetailLeft {
   padding: 40px;
   width: 65%;
-  background: linear-gradient(84.6deg, #CCDDE2 0%, #D9F1E8 100%);
+  background: linear-gradient(84.6deg, #ccdde2 0%, #d9f1e8 100%);
 
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -98,7 +97,7 @@ color: rgba(0, 0, 0, 1);
   flex-direction: column;
   justify-content: center;
   position: relative;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
 }
 
 .feedbackDetailTitle {
@@ -107,17 +106,18 @@ color: rgba(0, 0, 0, 1);
   margin-bottom: 15px;
   color: #2c3e50;
   line-height: 1.3;
+  font-family: "Nekst-Medium";
 }
 
 .feedbackDetailDescription {
+  font-weight: 400;
+  font-family: "Nekst-Regular";
+  font-size: 20.78px;
+  color: rgba(0, 0, 0, 0.6);
 
-font-weight: 400;
-font-size: 20.78px;
-color: rgba(0, 0, 0, 0.6);
-
-line-height: 39.64px;
-letter-spacing: 0%;
-vertical-align: middle;
+  line-height: 39.64px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 
   padding-right: 70px;
   padding-bottom: 25px;
@@ -127,7 +127,7 @@ vertical-align: middle;
   display: inline-block;
   background-color: transparent;
   color: #34495e;
-  border:1px solid rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   padding: 10px 20px;
   font-weight: 500;
@@ -137,7 +137,7 @@ vertical-align: middle;
 }
 
 .feedbackDetailButton:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   border-color: #95a5a6;
 }
 
@@ -149,17 +149,17 @@ vertical-align: middle;
   padding: 20px;
   height: 280px;
   position: relative;
-  left:-80px;
-  top:20px;
+  left: -80px;
+  top: 20px;
 }
 
 .feedbackDetailImage {
-	position: absolute;
+  position: absolute;
   width: 560px;
   height: 280px;
   border-radius: 142.04px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feedbackDetailImg {
@@ -173,7 +173,7 @@ vertical-align: middle;
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .feedbackDetailLeft,
   .feedbackDetailRight {
     width: 100%;
@@ -194,4 +194,4 @@ vertical-align: middle;
     height: 180px;
     margin: 0 auto;
   }
-} 
+}

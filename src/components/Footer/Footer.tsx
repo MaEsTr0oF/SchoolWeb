@@ -89,16 +89,19 @@ export default function Footer({ form = false }: FooterProps) {
                   CodeKids
                 </span>
               </Link>
-              <p className="text-[#c7ced6] text-sm max-w-[260px]">
+              <p className="text-[#c7ced6] font-nekstregular  text-sm max-w-[260px]">
                 Обучаем детей и взрослых программированию, дизайну и цифровым
                 профессиям. Практические проекты, поддержка карьерного центра и
                 живые занятия.
               </p>
+              {/* обязательно экранировать кавычки */}
 
               <div className="flex items-center gap-3 pt-1">
                 <div className="flex items-center gap-2 text-[#c7ced6] text-sm">
                   <MapPin className="w-4 h-4 text-[#9aa6b2]" />
-                  <span>г. Москва, ул. Примерная, 10</span>
+                  <span className="font-nekstregular">
+                    г. Москва, ул. Планерная, 10
+                  </span>
                 </div>
               </div>
             </div>
@@ -114,7 +117,7 @@ export default function Footer({ form = false }: FooterProps) {
                     href="/courses/1"
                     className="hover:text-white flex items-center gap-2"
                   >
-                    <ChevronRight className="w-4 h-4 text-[#6b7280]" />
+                    <ChevronRight className="w-4 h-4 text-[#6b7280] " />
                     Python
                   </Link>
                 </li>
@@ -149,28 +152,40 @@ export default function Footer({ form = false }: FooterProps) {
             </div>
 
             {/* Column: Ресурсы / Компания */}
-            <div>
+            <div className="">
               <h4 className="text-[16px] font-semibold mb-4 text-white">
                 О проекте
               </h4>
               <ul className="space-y-3 text-[#c7ced6] text-sm">
                 <li>
-                  <Link href="/#about-us" className="hover:text-white">
+                  <Link
+                    href="/#about-us"
+                    className="hover:text-white font-nekstregular"
+                  >
                     О нас
                   </Link>
                 </li>
                 <li>
-                  <Link href="/teaching-methods" className="hover:text-white">
+                  <Link
+                    href="/teaching-methods"
+                    className="hover:text-white font-nekstregular"
+                  >
                     Методы преподавания
                   </Link>
                 </li>
                 <li>
-                  <Link href="/teachers" className="hover:text-white">
+                  <Link
+                    href="/teachers"
+                    className="hover:text-white font-nekstregular"
+                  >
                     Преподаватели
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#reviews" className="hover:text-white">
+                  <Link
+                    href="/#reviews"
+                    className="hover:text-white font-nekstregular"
+                  >
                     Отзывы
                   </Link>
                 </li>
@@ -181,7 +196,7 @@ export default function Footer({ form = false }: FooterProps) {
                       e.preventDefault();
                       openRegistrationModal();
                     }}
-                    className="hover:text-white"
+                    className="hover:text-white font-nekstregular"
                   >
                     Оплата
                   </a>
@@ -197,16 +212,16 @@ export default function Footer({ form = false }: FooterProps) {
 
               <div className="flex items-start gap-3">
                 <div className="p-2 rounded-md bg-[#0b1220]">
-                  <Phone className="w-5 h-5 text-[#9fb6c9]" />
+                  <Phone className="w-5 h-5 text-[#9fb6c9] " />
                 </div>
                 <div>
                   <a
-                    href="tel:+79999999999"
-                    className="text-white font-medium no-underline"
+                    href="tel:+79999999999 "
+                    className="text-white font-nekstregular no-underline"
                   >
                     +7 (999) 999-99-99
                   </a>
-                  <p className="text-[#9aa6b2] text-sm mt-1">
+                  <p className="text-[#9aa6b2] text-sm mt-1 font-nekstregular">
                     Звонки с 9:00 до 20:00
                   </p>
                 </div>
@@ -219,11 +234,11 @@ export default function Footer({ form = false }: FooterProps) {
                 <div>
                   <a
                     href="mailto:email@mail.ru"
-                    className="text-white no-underline"
+                    className="text-white no-underline font-nekstregular"
                   >
                     email@mail.ru
                   </a>
-                  <p className="text-[#9aa6b2] text-sm mt-1">
+                  <p className="text-[#9aa6b2] text-sm mt-1 font-nekstregular">
                     Отвечаем в течение 24 часов
                   </p>
                 </div>
@@ -234,15 +249,17 @@ export default function Footer({ form = false }: FooterProps) {
                   <Clock className="w-5 h-5 text-[#9fb6c9]" />
                 </div>
                 <div>
-                  <p className="text-white font-medium">Пн–Пт: 09:00 — 20:00</p>
-                  <p className="text-[#9aa6b2] text-sm mt-1">
+                  <p className="text-white font-nekstregular">
+                    Пн–Пт: 09:00 — 20:00
+                  </p>
+                  <p className="text-[#9aa6b2] text-sm mt-1 font-nekstregular">
                     Сб–Вс: 10:00 — 16:00
                   </p>
                 </div>
               </div>
 
               <div>
-                <h5 className="text-[14px] font-semibold text-white mb-2">
+                <h5 className="text-[14px] font-nekstmedium text-white mb-2">
                   Мы в соцсетях
                 </h5>
                 <div className="flex items-center gap-3">
@@ -311,15 +328,23 @@ export default function Footer({ form = false }: FooterProps) {
               </form>
             </div>
 
-            <div className="flex-shrink-0 text-sm text-[#9aa6b2] flex flex-col md:flex-row md:items-center gap-4">
-              <div>© {new Date().getFullYear()} CodeKids</div>
+            <div className="flex-shrink-0 text-sm text-[#9aa6b2] flex flex-col md:flex-row md:items-center gap-4 ">
+              <div className="font-nekstregular">
+                © {new Date().getFullYear()} CodeKids
+              </div>
               <div>
-                <Link href="/privacy" className="hover:text-white">
+                <Link
+                  href="/privacy"
+                  className="hover:text-white font-nekstregular"
+                >
                   Политика конфиденциальности
                 </Link>
               </div>
               <div>
-                <Link href="/terms" className="hover:text-white">
+                <Link
+                  href="/terms"
+                  className="hover:text-white font-nekstregular"
+                >
                   Условия использования
                 </Link>
               </div>

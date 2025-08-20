@@ -1,123 +1,124 @@
 .header {
-background-color: #fff; /* Или другой светлый фон, если нужно */
-padding: 10px 0;
-border-bottom: 1px solid #eee; /* Небольшая линия внизу, как на фото */
-width: 100%;
-position:sticky;
-top: 0;
-z-index: 100;
+  background-color: #fff; /* Или другой светлый фон, если нужно */
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; /* Небольшая линия внизу, как на фото */
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px; /* Ограничиваем ширину контейнера */
-margin: 0 auto; /* Центрируем контейнер */
-padding: 0 15px; /* Добавляем отступы по бокам */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Ограничиваем ширину контейнера */
+  margin: 0 auto; /* Центрируем контейнер */
+  padding: 0 15px; /* Добавляем отступы по бокам */
 }
 
 .header__content {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
-margin-right: 40px; /* Отступ справа от логотипа */
+  margin-right: 40px; /* Отступ справа от логотипа */
 }
 
 /* Убедитесь, что изображение логотипа подстраивается */
 .header__logo img {
-display: block;
-max-width: 100%;
-height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-
 .header__menu-list {
-display: flex;
-list-style: none;
-padding: 0;
-margin: 0;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .header__menu-item {
-margin-right: 30px; /* Отступ между пунктами меню */
+  margin-right: 30px; /* Отступ между пунктами меню */
 }
 
 .header__menu-item:last-child {
-margin-right: 0;
+  margin-right: 0;
 }
 
 .header__menu-link {
-text-decoration: none;
-color: #333; /* Цвет текста меню */
-font-weight: 500; /* Немного жирнее */
-transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-position: relative;
-font-size: 22px;
+  text-decoration: none;
+  color: #333; /* Цвет текста меню */
+  font-weight: 500; /* Немного жирнее */
+  transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
+  font-family: "Nekst-Medium";
+  font-size: 22px;
 }
-.header__menu-link:before{
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background-color: #95B1C9;
-	border-radius: 50%;
-	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.header__menu-link:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #95b1c9;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .header__menu-link:hover {
-color: #95B1C9; /* Цвет при наведении */
+  color: #95b1c9; /* Цвет при наведении */
 }
-.header__menu-link:hover:before{
-	width: 100%;
+.header__menu-link:hover:before {
+  width: 100%;
 }
 .header__buttons {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header__button {
-padding: 10px 25px; /* Отступы внутри кнопки */
-border-radius: 30px; /* Скругление углов */
-border: 1px solid #a9c2d9; /* Общая граница */
-cursor: pointer;
-font-size: 18px;
-font-weight: 500;
-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-margin-left: 15px; /* Отступ между кнопками */
+  padding: 10px 25px; /* Отступы внутри кнопки */
+  border-radius: 30px; /* Скругление углов */
+  border: 1px solid #a9c2d9; /* Общая граница */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  margin-left: 15px; /* Отступ между кнопками */
 }
 
 .header__button--signup {
-	background-color: #0092CC; /* Фон для кнопки "Связаться" */
-	color: #fff; /* Цвет текста */
+  background-color: #0092cc; /* Фон для кнопки "Связаться" */
+  color: #fff; /* Цвет текста */
 }
 
 .header__button--signup:hover {
-	color: #fff; /* Текст белый */
-	transform: scale(1.05);
-	border: 2px solid #0092CC;
+  color: #fff; /* Текст белый */
+  transform: scale(1.05);
+  border: 2px solid #0092cc;
   box-shadow: 0 4px 8px rgba(0, 146, 204, 0.2);
 }
 
 .header__button--contact {
-background-color: #51C791; /* Фон для кнопки "Связаться" */
-color: #fff; /* Цвет текста */
+  background-color: #51c791; /* Фон для кнопки "Связаться" */
+  color: #fff; /* Цвет текста */
 }
 
 .header__button--contact:hover {
-	color: #fff; /* Текст белый */
-	transform: scale(1.05);
-	border: 2px solid #51C791;
+  color: #fff; /* Текст белый */
+  transform: scale(1.05);
+  border: 2px solid #51c791;
   box-shadow: 0 4px 8px rgba(81, 199, 145, 0.2);
 }
 .container {
-	max-width: 1800px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: 100%;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }

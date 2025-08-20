@@ -9,24 +9,24 @@ export default function AboutUs() {
           <div className={styles.aboutUs__content}>
             <div className={styles.aboutUs__cards}>
               <div className={styles.aboutUs__card}>
-                <p>
+                <p className="font-nekstregular">
                   Обучение через практику Каждый урок — это шаг к собственному
                   проекту: игре, приложению или веб-сайту.
                 </p>
               </div>
               <div className={styles.aboutUs__card}>
-                <p>
+                <p className="font-nekstregular">
                   Наши преподаватели — специалисты из IT-сферы, умеющие доступно
                   объяснять сложные вещи.
                 </p>
               </div>
               <div className={styles.aboutUs__card}>
-                <p>
+                <p className="font-nekstregular">
                   Маленькие группы и персональное внимание к каждому ученику.
                 </p>
               </div>
               <div className={styles.aboutUs__card}>
-                <p>
+                <p className="font-nekstregular">
                   Онлайн-формат позволяет учиться из любой точки мира — в
                   комфортном темпе и графике.
                 </p>
@@ -37,7 +37,7 @@ export default function AboutUs() {
                 <h2>О нас</h2>
               </div>
 
-              <p>
+              <p className="font-nekstregular">
                 Мы — онлайн-школа программирования для детей, где обучение
                 превращается в увлекательное приключение! Наши курсы разработаны
                 специально для учеников от 7 до 17 лет — с учётом возраста,

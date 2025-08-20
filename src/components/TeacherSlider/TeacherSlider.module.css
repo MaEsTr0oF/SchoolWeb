@@ -8,7 +8,6 @@
   width: 100%;
 
   margin: 0 auto;
- 
 }
 
 .teacherContainer {
@@ -34,7 +33,7 @@
 }
 
 .leftBlock {
-	height: 100%;
+  height: 100%;
   /* width: 100%; - убираем, если teacherCard будет управлять своей шириной */
   /* padding-right: 20px; - убираем, если не нужно */
   /* Можно добавить display: flex; justify-content: center; align-items: center; 
@@ -42,8 +41,12 @@
 }
 
 .teacherCard {
-	height: 100%;
-  background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%); /* Пример градиента, подберите цвета точнее */
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #e0f2f1 0%,
+    #b2dfdb 100%
+  ); /* Пример градиента, подберите цвета точнее */
   /* Или однотонный цвет: background-color: #e9f5f4; */
   border-radius: 24px; /* Более выраженное скругление */
   padding: 25px; /* Общий паддинг */
@@ -62,7 +65,7 @@
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0; /* Чтобы фото не сжималось */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Небольшая тень для фото */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень для фото */
 }
 
 .teacherImage {
@@ -78,35 +81,36 @@
 }
 
 .teacherName {
-	display: inline-block;
-	font-weight: 600;
-	font-size: 23.78px;
-	
-	line-height: 33.03px;
-	letter-spacing: 0%;
-	vertical-align: middle;
-	color: rgba(0, 0, 0, 1);
+  font-family: "Nekst-Medium";
+  display: inline-block;
+  font-weight: 600;
+  font-size: 23.78px;
 
+  line-height: 33.03px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 1);
 }
 
 .statusDot {
   display: inline-block;
   width: 10px; /* Увеличил точку */
   height: 10px;
-  background-color: #66BB6A; /* Ярко-зеленый, подберите по макету */
+  background-color: #66bb6a; /* Ярко-зеленый, подберите по макету */
   border-radius: 50%;
   margin-left: 10px; /* Увеличил отступ */
   vertical-align: middle; /* Чтобы точка была по центру имени */
 }
 
 .teacherBio {
-	font-weight: 400;
-	font-size: 18.5px;
-	
-	line-height: 24.43px;
-	letter-spacing: 0%;
-	vertical-align: middle;
-	color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 18.5px;
+  font-family: "Nekst-Regular";
+
+  line-height: 24.43px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .navigationControls {
@@ -150,27 +154,28 @@
 }
 
 .titleBlock {
-  
 }
 
 .mainTitle {
-	color: rgba(0, 0, 0, 1);
-font-weight: 600;
-font-size: 40.85px;
-padding-bottom: 23px;
-line-height: 150%;
-letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+  font-size: 40.85px;
+  padding-bottom: 23px;
+  line-height: 150%;
+  letter-spacing: 0%;
 
   text-align: left;
+  font-family: "Nekst-Medium";
 }
 
 .description {
-	color: rgba(0, 0, 0, 0.6);
-font-weight: 400;
-font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Nekst-Regular";
 
-line-height: 150%;
-letter-spacing: 0%;
+  line-height: 150%;
+  letter-spacing: 0%;
 
   text-align: left;
 }
@@ -179,11 +184,11 @@ letter-spacing: 0%;
   .teacherContainer {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .rightBlock {
     grid-column: span 2;
   }
-  
+
   .description {
     text-align: left;
     max-width: 100%;
@@ -194,20 +199,20 @@ letter-spacing: 0%;
   .teacherContainer {
     grid-template-columns: 1fr;
   }
-  
+
   .numberBlock {
     display: none;
   }
-  
+
   .leftBlock {
     padding-right: 0;
   }
-  
+
   .rightBlock {
     grid-column: 1;
   }
-  
+
   .mainTitle {
     font-size: 28px;
   }
-} 
+}
