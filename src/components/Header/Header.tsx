@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -69,8 +69,14 @@ export default function Header() {
         </div>
       </div>
 
-      <RegistrationModal isOpen={isRegistrationModalOpen} onClose={closeRegistrationModal} />
-      <ApplicationModal isOpen={isApplicationModalOpen} onClose={closeApplicationModal} />
+      <RegistrationModal
+        isOpen={isRegistrationModalOpen}
+        onClose={closeRegistrationModal}
+      />
+      <ApplicationModal
+        isOpen={isApplicationModalOpen}
+        onClose={closeApplicationModal}
+      />
     </header>
   );
 }

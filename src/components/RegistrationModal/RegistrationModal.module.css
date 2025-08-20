@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1001;
+  z-index: 1000;
 }
 
 .modalContent {
@@ -22,7 +22,7 @@
 }
 
 .modalTitle {
-	color:black;
+  color: black;
   font-size: 24px;
   font-weight: bold;
   margin-top: 0;
@@ -72,7 +72,7 @@
 }
 
 .selectWrapper::after {
-  content: '▼';
+  content: "▼";
   position: absolute;
   top: 50%;
   right: 10px;
@@ -140,7 +140,7 @@
   cursor: pointer;
   user-select: none;
   margin-top: 5px;
-  color:black;
+  color: black;
 }
 
 .selectControl {
@@ -208,4 +208,4 @@
 
 .selectOption:not(:last-child) {
   border-bottom: 1px solid #f0f0f0;
-} 
+}

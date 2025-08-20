@@ -24,7 +24,7 @@ export default function Home() {
         <TeacherSlider />
         <FeedbackDetail />
         <CommentSlider />
-        <Collaboration />
+        {/* <Collaboration /> */}
         <ContactForm />
       </MainLayout>
       <Footer form={false} />

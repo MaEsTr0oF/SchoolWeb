@@ -1,8 +1,8 @@
-'use client'
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './TeacherSlider.module.css';
-import TeacherModal from '../TeacherModal/TeacherModal';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./TeacherSlider.module.css";
+import TeacherModal from "../TeacherModal/TeacherModal";
 
 // Типизация данных преподавателя
 interface Teacher {
@@ -21,63 +21,66 @@ interface Teacher {
 const teachersData: Teacher[] = [
   {
     id: 1,
-    name: 'Антон Курмаев',
-    description: 'Преподаватель с 5-летним опытом онлайн-обучения. Специализируюсь на предмет, применяю современные технологии для эффективного обучения.',
-    position: 'Преподаватель веб-разработки',
-    experience: '5 лет опыта',
-    image: '/images/teachers/1.png',
+    name: "Антон Курмаев",
+    description:
+      "Преподаватель с 5-летним опытом онлайн-обучения. Специализируюсь на предмет, применяю современные технологии для эффективного обучения.",
+    position: "Преподаватель веб-разработки",
+    experience: "5 лет опыта",
+    image: "/images/teachers/1.png",
     rating: 5.0,
     education: [
-      'Высшее образование в сфере информационных технологий',
-      'Сертификат разработчика Frontend',
-      'Курсы повышения квалификации по методикам обучения'
+      "Высшее образование в сфере информационных технологий",
+      "Сертификат разработчика Frontend",
+      "Курсы повышения квалификации по методикам обучения",
     ],
     courses: [
-      'Графический дизайн',
-      'UX/UI Дизайнер',
-      'Программирование',
-      '3D-дженералист'
-    ]
+      "Графический дизайн",
+      "UX/UI Дизайнер",
+      "Программирование",
+      "3D-дженералист",
+    ],
   },
   {
     id: 2,
-    name: 'Елена Смирнова',
-    description: 'Преподаватель с 7-летним опытом онлайн-обучения. Специализируюсь на интерактивных методиках преподавания английского языка.',
-    position: 'Преподаватель английского',
-    experience: '7 лет опыта',
-    image: '/images/teachers/teacher2.jpg',
+    name: "Елена Смирнова",
+    description:
+      "Преподаватель с 7-летним опытом онлайн-обучения. Специализируюсь на интерактивных методиках преподавания английского языка.",
+    position: "Преподаватель английского",
+    experience: "7 лет опыта",
+    image: "/images/teachers/teacher2.jpg",
     rating: 5.0,
     education: [
-      'Лингвистический университет, факультет иностранных языков',
-      'Сертификат TESOL для преподавания английского',
-      'Курсы по методике интерактивного обучения'
+      "Лингвистический университет, факультет иностранных языков",
+      "Сертификат TESOL для преподавания английского",
+      "Курсы по методике интерактивного обучения",
     ],
     courses: [
-      'Графический дизайн',
-      'UX/UI Дизайнер',
-      'Программирование',
-      '3D-дженералист'
-    ]
+      "Графический дизайн",
+      "UX/UI Дизайнер",
+      "Программирование",
+      "3D-дженералист",
+    ],
   },
   {
     id: 3,
-    name: 'Сергей Иванов',
-    description: 'Преподаватель с 8-летним опытом онлайн-обучения. Специализируюсь на Python и Data Science, помогаю ученикам с трудоустройством.',
-    position: 'Python-разработчик',
-    experience: '8 лет опыта',
-    image: '/images/teachers/teacher3.jpg',
+    name: "Сергей Иванов",
+    description:
+      "Преподаватель с 8-летним опытом онлайн-обучения. Специализируюсь на Python и Data Science, помогаю ученикам с трудоустройством.",
+    position: "Python-разработчик",
+    experience: "8 лет опыта",
+    image: "/images/teachers/teacher3.jpg",
     rating: 5.0,
     education: [
-      'Магистр компьютерных наук',
-      'Сертифицированный специалист по Data Science',
-      'Курсы по машинному обучению и аналитике данных'
+      "Магистр компьютерных наук",
+      "Сертифицированный специалист по Data Science",
+      "Курсы по машинному обучению и аналитике данных",
     ],
     courses: [
-      'Программирование',
-      'UX/UI Дизайнер',
-      'Графический дизайн',
-      '3D-дженералист'
-    ]
+      "Программирование",
+      "UX/UI Дизайнер",
+      "Графический дизайн",
+      "3D-дженералист",
+    ],
   },
 ];
 
@@ -119,26 +122,25 @@ const TeacherSlider: React.FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.teacherSection}>
         <div className={styles.teacherContainer}>
-          
-          
           <div className={styles.rightBlock}>
             <div className={styles.titleBlock}>
               <h2 className={styles.mainTitle}>
-                Преподаватели на связи <br />
-                и вне уроков!
+                Преподаватели на связи <br />и вне уроков!
               </h2>
               <p className={styles.description}>
-                Преподаватели и кураторы доступны и вне уроков. 
-                Если возникнут вопросы или сложности, ребенок всегда
-                сможет обратиться за помощью, и мы обязательно поможем
-                решить любую проблему!
+                Преподаватели доступны и вне уроков. Если возникнут вопросы или
+                сложности, ребенок всегда сможет обратиться за помощью, и
+                учитель оперативно поможет решить проблему!
               </p>
             </div>
           </div>
-			 <div className={styles.leftBlock}>
-            <div className={styles.teacherCard} onClick={() => openTeacherModal(currentTeacher)}>
+          <div className={styles.leftBlock}>
+            <div
+              className={styles.teacherCard}
+              onClick={() => openTeacherModal(currentTeacher)}
+            >
               <div className={styles.teacherImageContainer}>
-                <Image 
+                <Image
                   src={currentTeacher.image}
                   alt={currentTeacher.name}
                   width={120}
@@ -146,28 +148,54 @@ const TeacherSlider: React.FC = () => {
                   className={styles.teacherImage}
                 />
               </div>
-              
+
               <div className={styles.teacherInfo}>
                 <h3 className={styles.teacherName}>{currentTeacher.name}</h3>
                 <div className={styles.statusDot}></div>
-                <p className={styles.teacherBio}>{currentTeacher.description}</p>
+                <p className={styles.teacherBio}>
+                  {currentTeacher.description}
+                </p>
               </div>
-              
+
               <div className={styles.navigationControls}>
-                <button 
-                  onClick={(e) => handleButtonClick(e, prevSlide)} 
+                <button
+                  onClick={(e) => handleButtonClick(e, prevSlide)}
                   className={`${styles.navButton} ${styles.prevButton}`}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
-                <button 
-                  onClick={(e) => handleButtonClick(e, nextSlide)} 
+                <button
+                  onClick={(e) => handleButtonClick(e, nextSlide)}
                   className={`${styles.navButton} ${styles.nextButton}`}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
               </div>
@@ -185,7 +213,7 @@ const TeacherSlider: React.FC = () => {
             description: selectedTeacher.description,
             image: selectedTeacher.image,
             education: selectedTeacher.education,
-            courses: selectedTeacher.courses
+            courses: selectedTeacher.courses,
           }}
         />
       )}
@@ -193,4 +221,4 @@ const TeacherSlider: React.FC = () => {
   );
 };
 
-export default TeacherSlider; 
+export default TeacherSlider;
