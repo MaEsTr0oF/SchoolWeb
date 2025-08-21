@@ -106,12 +106,11 @@
   margin-bottom: 15px;
   color: #2c3e50;
   line-height: 1.3;
-  font-family: "Nekst-Medium";
 }
 
 .feedbackDetailDescription {
   font-weight: 400;
-  font-family: "Nekst-Regular";
+
   font-size: 20.78px;
   color: rgba(0, 0, 0, 0.6);
 

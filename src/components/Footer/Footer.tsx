@@ -83,16 +83,17 @@ export default function Footer({ form = false }: FooterProps) {
               >
                 {/* Replace with your logo if available */}
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#4f46e5] to-[#06b6d4] flex items-center justify-center">
-                  <span className="font-bold text-white">CK</span>
+                  <span className="font-bold text-white">К</span>
                 </div>
-                <span className="text-xl font-semibold text-white">
-                  CodeKids
+                <span className="text-xl font-nekstregular font-semibold text-white">
+                  Код к знаниям
                 </span>
               </Link>
               <p className="text-[#c7ced6] font-nekstregular  text-sm max-w-[260px]">
-                Обучаем детей и взрослых программированию, дизайну и цифровым
-                профессиям. Практические проекты, поддержка карьерного центра и
-                живые занятия.
+                Мы предлагаем профессиональные образовательные программы по
+                Python, Roblox, Scratch и Minecraft. Живые занятия с
+                преподавателями, проверенные учебные программы и персональная
+                поддержка.
               </p>
               {/* обязательно экранировать кавычки */}
 
@@ -330,7 +331,7 @@ export default function Footer({ form = false }: FooterProps) {
 
             <div className="flex-shrink-0 text-sm text-[#9aa6b2] flex flex-col md:flex-row md:items-center gap-4 ">
               <div className="font-nekstregular">
-                © {new Date().getFullYear()} CodeKids
+                © {new Date().getFullYear()} Код к знаниям
               </div>
               <div>
                 <Link

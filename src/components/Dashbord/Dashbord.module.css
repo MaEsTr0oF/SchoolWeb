@@ -62,16 +62,15 @@
   font-weight: 700;
   line-height: 1.1;
   color: #222;
-  font-family: "Nekst-Medium";
+
   margin-bottom: 20px;
 }
 
 .dashbord__subtitle {
-  font-size: 20px;
+  font-size: 18px;
   color: #444;
   margin-bottom: 32px;
   max-width: 500px;
-  font-family: "Nekst-Regular";
 }
 
 .dashbord__buttons {
@@ -82,13 +81,12 @@
 
 .dashbord__primaryButton {
   padding: 12px 24px;
-  font-family: "Nekst-Medium";
   background: linear-gradient(257.25deg, #0092cc 0%, #51c791 99.29%);
 
   color: white;
   border: none;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -100,13 +98,12 @@
 }
 
 .dashbord__secondaryButton {
-  font-family: "Nekst-Medium";
   padding: 12px 24px;
   background-color: transparent;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;

@@ -81,7 +81,6 @@
 }
 
 .teacherName {
-  font-family: "Nekst-Medium";
   display: inline-block;
   font-weight: 600;
   font-size: 23.78px;
@@ -105,7 +104,6 @@
 .teacherBio {
   font-weight: 400;
   font-size: 18.5px;
-  font-family: "Nekst-Regular";
 
   line-height: 24.43px;
   letter-spacing: 0%;
@@ -165,14 +163,12 @@
   letter-spacing: 0%;
 
   text-align: left;
-  font-family: "Nekst-Medium";
 }
 
 .description {
   color: rgba(0, 0, 0, 0.6);
   font-weight: 400;
   font-size: 18px;
-  font-family: "Nekst-Regular";
 
   line-height: 150%;
   letter-spacing: 0%;

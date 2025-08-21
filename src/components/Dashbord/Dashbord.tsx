@@ -20,7 +20,7 @@ export default function Dashbord() {
               <br />
               Создавайте
               <br />
-              Кодируйте будущее своего ребёнка!
+              Кодируйте будущее своего ребенка!
             </h1>
             <p className={styles.dashbord__subtitle}>
               Овладейте навыками, которые изменят ваш мир.
